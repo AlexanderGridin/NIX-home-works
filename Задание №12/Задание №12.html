@@ -9,6 +9,40 @@
 
   <body>
     <h1>Задание №12</h1>
+    <hr>
+
+    <form action="check-data.php" method="POST">
+      <div>
+        <label for="email">Введите Email:</label>
+        <input type="email" name="email" id="email" value="Не email">
+      </div>
+      <div>
+        <label for="url">Введите url</label>
+        <input type="url" name="url" id="url" value="Не url">
+      </div>
+      <div>
+        <label for="phone">Введите телефон:</label>
+        <input type="tel" name="phone" id="phone">
+      </div>
+      <div>
+        <label for="number">Введите число:</label>
+        <input type="number" name="number" id="number" value="10">
+      </div>
+      <div>
+        <label for="range-number">Выберите число:</label>
+        <input type="range" name="range-number" id="range-number" min="0" max="100">
+      </div>
+      <div>
+        <input type="search" name="search" id="search" placeholder="Поиск по сайту">
+      </div>
+      <div>
+        <label for="color">Выберите цвет:</label>
+        <input type="color" name="color" id="color">
+      </div>
+      <div>
+        <input type="submit" value="Отправить">
+      </div>
+    </form>
   </body>
 
 </html>
