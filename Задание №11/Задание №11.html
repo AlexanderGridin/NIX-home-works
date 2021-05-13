@@ -9,6 +9,34 @@
 
   <body>
     <h1>Задание №11</h1>
+    <hr>
+
+    <form action="check-data.php" method="POST">
+      <div>
+        <label for="name">Ф.И.О.:</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div>
+        <label for="login">Логин:</label>
+        <input type="text" name="login" id="login">
+      </div>
+      <div>
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" id="password">
+      </div>
+      <div>
+        <label for="password-repeat">Повторите пароль:</label>
+        <input type="password" name="password-repeat" id="password-repeat">
+      </div>
+      <div>
+        <span>Пол:</span>
+        <input type="radio" name="gender" id="gender-m" value="m" checked><label for="gender-m">M</label>
+        <input type="radio" name="gender" id="gender-w" value="w"><label for="gender-w">Ж</label>
+      </div>
+      <div>
+        <input type="submit" value="Регистрация">
+      </div>
+    </form>
   </body>
 
 </html>
