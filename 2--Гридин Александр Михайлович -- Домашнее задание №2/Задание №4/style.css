@@ -1,0 +1,9 @@
+div:not(.task) p
+{
+  color: red;
+}
+
+#first p
+{
+  background-color: blue;
+}
