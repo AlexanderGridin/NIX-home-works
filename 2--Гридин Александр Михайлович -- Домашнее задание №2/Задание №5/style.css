@@ -1,0 +1,9 @@
+.main + p
+{
+  color: red;
+}
+
+.task div ~ p
+{
+  background-color: blue;
+}
