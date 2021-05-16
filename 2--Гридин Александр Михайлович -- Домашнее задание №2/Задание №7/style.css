@@ -11,6 +11,7 @@ p:only-child
 div:not(.task):only-of-type
 {
   background-color: blue;
+  border: 1px solid #FFF;
 }
 
 :last-child
