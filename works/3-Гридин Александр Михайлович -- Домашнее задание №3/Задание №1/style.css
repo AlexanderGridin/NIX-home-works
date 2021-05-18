@@ -1,0 +1,58 @@
+:root
+{
+  font-weight: bold;
+  line-height: 1.5;
+  font-size: 1em;
+  background-image: url(https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body
+{
+  margin: 0;
+}
+
+header
+{
+  background-color: #0089D2;
+  color: #FFF;
+  padding: 15px;
+}
+
+header h1
+{
+  margin: 0;
+}
+
+.task
+{
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 25px;
+  padding: 25px;
+}
+
+.color-hex
+{
+  color: #9DD298;
+}
+
+.color-name
+{
+  color: red;
+}
+
+.color-rgb
+{
+  color: rgb(13, 22, 150);
+}
+
+.color-hsl
+{
+  color: hsl(14, 88%, 40%);
+}
+
+.color-rgba{
+  color: rgba(44, 77, 131, 0.3);
+}
