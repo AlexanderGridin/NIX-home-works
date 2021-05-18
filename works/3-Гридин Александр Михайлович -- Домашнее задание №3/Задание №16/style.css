@@ -1,0 +1,6 @@
+.task div
+{
+  width: 100px;
+  margin-left: 50px;
+  box-shadow: -20px 0 10px #4caf50, 20px 0 10px red;
+}
