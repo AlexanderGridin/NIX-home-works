@@ -1,0 +1,14 @@
+.task span:nth-child(1)
+{
+  font-weight: bold;
+}
+
+.task span:nth-child(2)
+{
+  font-style: italic;
+}
+
+p
+{
+  font-size: 2em;
+}
