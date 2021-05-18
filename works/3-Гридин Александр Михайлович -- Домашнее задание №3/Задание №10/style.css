@@ -1,0 +1,14 @@
+div:not(.task), p
+{
+  border: 1px solid black;
+}
+
+.task div
+{
+  padding: 10px 20px;
+}
+
+.task p
+{
+  margin: 20px 10px;
+}
