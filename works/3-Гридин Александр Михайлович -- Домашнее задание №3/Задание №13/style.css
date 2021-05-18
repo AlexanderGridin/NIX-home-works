@@ -1,0 +1,11 @@
+table
+{
+  border-spacing: 20px;
+  empty-cells: hide;
+  border: 3px dotted green;
+}
+
+td
+{
+  border: 3px dotted green;
+}
