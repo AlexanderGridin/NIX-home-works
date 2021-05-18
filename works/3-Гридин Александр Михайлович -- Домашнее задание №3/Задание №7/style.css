@@ -1,0 +1,14 @@
+.task
+{
+  max-width: 350px;
+  width: 100%;
+  border: 1px solid #efefef;
+  padding: 17px;
+}
+
+p
+{
+  line-height: 15px;
+  text-align: justify;
+  text-indent: 10px;
+}
