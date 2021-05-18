@@ -1,0 +1,27 @@
+.task div
+{
+  background-color: #eee;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.task div[class]
+{
+  background-color: #ddd;
+}
+
+.task .left,
+.task .right
+{
+  width: 20%;
+}
+
+.left
+{
+  float: left;
+}
+
+.right
+{
+  float: right;
+}
