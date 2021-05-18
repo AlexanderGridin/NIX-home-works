@@ -1,0 +1,13 @@
+.task div
+{
+  outline: 4px dashed red;
+  padding: 5px 15px;
+}
+
+.task p
+{
+  padding: 5px;
+  border: 3px double black;
+  outline: 1px solid black;
+  outline-offset: -5px;
+}
