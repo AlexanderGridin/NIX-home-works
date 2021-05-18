@@ -5,10 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание №2</title>
+
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
     <h1>Задание №2</h1>
+    <pre>
+      Вместо тега <b>body</b> прозрачность была применена к тегу <b>div</b> с классом <b>task</b> c целью сохранения исходной прозрачности заголовка страницы.
+
+      Прозрачность была реализована 2-мя способами:
+      - c помощью свойства <b>opacity</b>
+      - с помощью свойства <b>filter</b>
+    </pre>
+    <hr>
+
+    <div class="task opacity-30 opacity-30-by-filter">
+      <h2>Цвет текста задан с помощью HEX</h2>
+      <p class="color-hex">Первый параграф</p>
+
+      <h2>Цвет текста задан с помощью Названия цвета</h2>
+      <p class="color-name">Второй параграф</p>
+
+      <h2>Цвет текста задан с помощью RGB</h2>
+      <p class="color-rgb">Третий параграф</p>
+
+      <h2>Цвет текста задан с помощью HSL</h2>
+      <p class="color-hsl">Четвертый параграф</p>
+    </div>
   </body>
 
 </html>

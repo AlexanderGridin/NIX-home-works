@@ -1,0 +1,29 @@
+.opacity-30
+{
+  opacity: 0.3;
+}
+
+.opacity-30-by-filter
+{
+  filter: opacity(30%);
+}
+
+.color-hex
+{
+  color: #0000FF;
+}
+
+.color-name
+{
+  color: blue;
+}
+
+.color-rgb
+{
+  color: rgb(0,0,255);
+}
+
+.color-hsl
+{
+  color: hsl(240, 100%, 50%);
+}
