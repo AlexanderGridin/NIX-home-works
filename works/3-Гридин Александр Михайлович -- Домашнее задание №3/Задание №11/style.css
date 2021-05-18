@@ -1,0 +1,19 @@
+.task div
+{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.task div p
+{
+  width: 50%;
+  height: 50%;
+  background-color: blue;
+  margin: 0;
+}
+
+.task div p:first-child
+{
+  margin-left: 50%;
+}
