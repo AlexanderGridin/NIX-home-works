@@ -1,0 +1,46 @@
+.task div
+{
+  color: #FFF;
+}
+
+.task div[style="background-color: #FF0;"]
+{
+  color: #000;
+}
+
+.float-left
+{
+  float: left;
+}
+
+.float-right
+{
+  float: right;
+}
+
+.w-20prs
+{
+  width: 20%;
+}
+
+.ml-20prs
+{
+  margin-left: 20%;
+}
+
+.mr-20prs
+{
+  margin-right: 20%;
+}
+
+.pl-20prs
+{
+  padding-left: 20%;
+}
+
+.clearfix::after
+{
+  content: "";
+  display: block;
+  clear: both;
+}
