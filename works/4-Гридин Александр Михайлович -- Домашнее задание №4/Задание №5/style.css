@@ -1,0 +1,38 @@
+.task > div
+{
+  display: list-item;
+  list-style: upper-latin;
+  margin-left: 40px;
+}
+
+.task > div + div
+{
+  margin-top: 10px;
+}
+
+.rectangle,
+.square
+{
+  border: 2px solid #000;
+}
+
+.square
+{
+  width: 70px;
+  height: 70px;
+}
+
+.block
+{
+  display: block;
+}
+
+.inline
+{
+  display: inline;
+}
+
+.inline-block
+{
+  display: inline-block;
+}
