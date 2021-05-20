@@ -1,0 +1,41 @@
+*
+{
+  box-sizing: border-box;
+}
+
+.row > div
+{
+  border: 1px solid #000;
+  width: 25%;
+  padding: 5px;
+}
+
+.float-childs > div
+{
+  float: left;
+}
+
+.maw-200px
+{
+  max-width: 200px;
+  width: 100%;
+}
+
+.maw-900px
+{
+  max-width: 900px;
+  width: 100%;
+}
+
+.m-auto
+{
+  margin: auto;
+}
+
+.clearfix::after
+{
+  content: "";
+  display: block;
+  clear: both;
+}
+
