@@ -1,0 +1,16 @@
+.task div
+{
+  border: 2px solid black;
+  width: 100px;
+  padding: 0 5px;
+}
+
+.task div:nth-child(even)
+{
+  float: left;
+}
+
+.task div:nth-child(odd)
+{
+  float: right;
+}
