@@ -1,0 +1,34 @@
+.bgc-red
+{
+  background-color: red;
+}
+
+.bgc-white
+{
+  background-color: #fff;
+}
+
+.float-left
+{
+  float: left;
+}
+
+.float-right
+{
+  float: right;
+}
+
+.w-30prs
+{
+  width: 30%;
+}
+
+.ml-30prs
+{
+  margin-left: 30%;
+}
+
+.mr-30prs
+{
+  margin-right: 30%;
+}
