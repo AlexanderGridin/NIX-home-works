@@ -1,0 +1,48 @@
+*
+{
+  box-sizing: border-box;
+}
+
+.task
+{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  color: #FFF;
+}
+
+.task > div
+{
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  padding: 7px;
+}
+
+.first
+{
+  background-color: red;
+  bottom: 0;
+  right: 0;
+}
+
+.second
+{
+  background-color: green;
+  top: 0;
+  left: 0;
+}
+
+.third
+{
+  background-color: blue;
+  top: 0;
+  right: 0;
+}
+
+.fourth
+{
+  background-color: black;
+  bottom: 0;
+  left: 0;
+}
