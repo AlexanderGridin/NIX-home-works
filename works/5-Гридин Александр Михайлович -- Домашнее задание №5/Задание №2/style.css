@@ -1,0 +1,54 @@
+div:not(.task) {
+  padding: 5px;
+  border: 2px solid black;
+  margin: 5px;
+}
+
+.flex-container
+{
+  display: flex;
+}
+
+/* Flex-container width 400px */
+.flex-container-w-400px
+{
+  width: 400px;
+}
+
+.flex-container-w-400px div
+{
+  flex-basis: 15%;
+}
+
+.flex-container-w-400px div:nth-child(odd)
+{
+  flex-grow: 1;
+}
+
+/* Flex-container width 500px */
+.flex-container-w-500px
+{
+  width: 500px;
+}
+
+.flex-container-w-500px div
+{
+  flex-basis: 25%;
+}
+
+/* Flex-container width 600px */
+.flex-container-w-600px
+{
+  width: 600px;
+}
+
+.flex-container-w-600px div
+{
+  flex-basis: 15%;
+}
+
+.flex-container-w-600px div:nth-child(3),
+.flex-container-w-600px div:nth-child(4)
+{
+  flex-grow: 1;
+}
