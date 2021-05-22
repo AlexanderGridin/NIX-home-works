@@ -8,72 +8,32 @@ div:not(.task)
   border: 2px solid black;
 }
 
-div.flex-wrapper
+.flex-wrapper
 {
-  border: none;
+  display: flex;
+  height: 300px;
+  align-items: center;
 }
 
-@media screen and (min-width: 768px)
+.flex-wrapper div
 {
-  .flex-wrapper
-  {
-    display: flex;
-    flex-wrap: wrap;
-  }
+  padding: 7px;
+  flex-basis: 20%;
 }
 
-@media screen and (min-width: 991px)
+.flex-wrapper div:nth-child(1)
 {
-  .flex-wrapper
-  {
-    justify-content: space-between;
-  }
+  align-self: flex-end;
 }
 
-.header,
-.footer
+.flex-wrapper div:nth-child(3)
 {
-  width: 100%;
+  align-self: flex-start;
 }
 
-@media screen and (min-width: 768px)
+.flex-wrapper div:nth-child(4)
 {
-  .header
-  {
-    order: 1;
-  }
-
-  .aside
-  {
-    width: 25%;
-  }
-
-  .aside-left
-  {
-    order: 2;
-  }
-
-  .aside-right
-  {
-    order: 4;
-  }
-
-  .content
-  {
-    width: 50%;
-    order: 3;
-  }
-
-  .footer
-  {
-    order: 5;
-  }
+  order: 5;
+  align-self: flex-end;
 }
 
-@media screen and (min-width: 991px)
-{
-  .aside
-  {
-    width: 20%;
-  }
-}
