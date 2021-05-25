@@ -1,0 +1,99 @@
+.user-menu
+{
+  padding: 0;
+  padding-right: 10px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 6px;
+  right: 10px;
+
+  @media screen and (min-width: $bp-laptop)
+  {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+
+  li
+  {
+    margin: 0;
+
+    & + li
+    {
+      margin-left: 25px;
+    }
+  }
+
+  a:link,
+  a:visited
+  {
+    text-decoration: none;
+    position: relative;
+    transition: color 0.4s;
+
+    &::before
+    {
+      font-size: 1.3rem;
+      font-family:"Font Awesome 5 Free";
+      font-weight: 900;
+
+    }
+  }
+
+  a:focus,
+  a:hover,
+  a:active
+  {
+    color: #FFC0A1;
+  }
+
+  .counter
+  {
+    font-size: 0.75rem;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+  }
+
+  &__login
+  {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+
+    &::before
+    {
+      content: "\f2bd";
+      margin-right: 7px;
+    }
+  }
+
+  &__favourites,
+  &__cart
+  {
+    display: block;
+  }
+
+  &__favourites
+  {
+    font-size: 0;
+
+    &::before
+    {
+      content: "\f004";
+    }
+  }
+
+  &__cart
+  {
+    font-size: 0;
+
+    &::before
+    {
+      content: "\f07a";
+    }
+  }
+}

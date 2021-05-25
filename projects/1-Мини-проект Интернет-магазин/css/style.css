@@ -1,0 +1,263 @@
+:root {
+  font-size: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 1.3;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+*,
+::before,
+::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+}
+
+body * + * {
+  margin-top: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section {
+  padding: 15px 0;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 0 15px;
+  position: relative;
+}
+
+.column {
+  margin: 0;
+}
+
+.block {
+  margin: 5px;
+}
+
+.main-navigation {
+  background-color: #5F8173;
+  color: #FFF;
+  padding: 0;
+  border-bottom: 1px solid #5F8173;
+}
+
+.main-navigation .block {
+  margin: 0;
+}
+
+.main-navigation a:link,
+.main-navigation a:visited {
+  color: #FFF;
+}
+
+.main-navigation a:focus,
+.main-navigation a:hover,
+.main-navigation a:active {
+  text-decoration: none;
+}
+
+.main-navigation > .container {
+  padding: 0;
+}
+
+@media screen and (min-width: 991px) {
+  .main-navigation > .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 15px;
+  }
+}
+
+.button {
+  background: #FFC0A1;
+  border: 2px solid #FFC0A1;
+  padding: 10px 20px;
+  color: #000;
+}
+
+.button--sm {
+  padding: 7px 10px;
+}
+
+.main-menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  background: #416355;
+}
+
+@media screen and (min-width: 991px) {
+  .main-menu ul {
+    background: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.main-menu ul li {
+  margin: 0;
+}
+
+.main-menu ul li + li {
+  border-top: 1px solid #FFF;
+}
+
+@media screen and (min-width: 991px) {
+  .main-menu ul li + li {
+    border-top: none;
+  }
+}
+
+.main-menu a:link,
+.main-menu a:visited {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  -webkit-transition: background 0.4s;
+  transition: background 0.4s;
+}
+
+.main-menu a:focus,
+.main-menu a:hover,
+.main-menu a:active,
+.main-menu a.current {
+  background: #FFF;
+  color: #000;
+}
+
+@media screen and (min-width: 991px) {
+  .main-menu a:focus,
+  .main-menu a:hover,
+  .main-menu a:active,
+  .main-menu a.current {
+    background-color: #416355;
+    color: #FFF;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .main-menu__mobile-trigger {
+    display: none;
+  }
+}
+
+.user-menu {
+  padding: 0;
+  padding-right: 10px;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 6px;
+  right: 10px;
+}
+
+@media screen and (min-width: 991px) {
+  .user-menu {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}
+
+.user-menu li {
+  margin: 0;
+}
+
+.user-menu li + li {
+  margin-left: 25px;
+}
+
+.user-menu a:link,
+.user-menu a:visited {
+  text-decoration: none;
+  position: relative;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.user-menu a:link::before,
+.user-menu a:visited::before {
+  font-size: 1.3rem;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.user-menu a:focus,
+.user-menu a:hover,
+.user-menu a:active {
+  color: #FFC0A1;
+}
+
+.user-menu .counter {
+  font-size: 0.75rem;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
+
+.user-menu__login {
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-menu__login::before {
+  content: "\f2bd";
+  margin-right: 7px;
+}
+
+.user-menu__favourites, .user-menu__cart {
+  display: block;
+}
+
+.user-menu__favourites {
+  font-size: 0;
+}
+
+.user-menu__favourites::before {
+  content: "\f004";
+}
+
+.user-menu__cart {
+  font-size: 0;
+}
+
+.user-menu__cart::before {
+  content: "\f07a";
+}
+/*# sourceMappingURL=style.css.map */

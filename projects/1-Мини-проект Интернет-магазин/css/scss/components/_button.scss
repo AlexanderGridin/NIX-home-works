@@ -1,0 +1,12 @@
+.button
+{
+  background: #FFC0A1;
+  border: 2px solid #FFC0A1;
+  padding: 10px 20px;
+  color: #000;
+
+  &--sm
+  {
+    padding: 7px 10px;
+  }
+}

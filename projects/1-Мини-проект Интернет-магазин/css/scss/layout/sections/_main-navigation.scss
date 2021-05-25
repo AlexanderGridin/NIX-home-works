@@ -1,0 +1,39 @@
+.main-navigation
+{
+  background-color: #5F8173;
+  color: #FFF;
+  padding: 0;
+  border-bottom: 1px solid #5F8173;
+
+  .block
+  {
+    margin: 0;
+  }
+
+  a:link,
+  a:visited
+  {
+    color: #FFF;
+  }
+
+  a:focus,
+  a:hover,
+  a:active
+  {
+    text-decoration: none;
+  }
+
+  & > .container
+  {
+    padding: 0;
+
+    @media screen and (min-width: $bp-laptop)
+    {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+  }
+}
+
