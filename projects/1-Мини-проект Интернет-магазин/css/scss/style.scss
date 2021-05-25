@@ -1,10 +1,12 @@
 @import './abstracts/variables';
 
 @import './base/global';
-
-@import './layout/layout';
-@import './layout/sections/main-navigation';
+@import './base/layout';
 
 @import './components/button';
 @import './components/main-menu';
 @import './components/user-menu';
+@import './components/contacts';
+
+@import './sections/main-navigation';
+@import './sections/header-content';

@@ -25,29 +25,29 @@
     {
       margin-left: 25px;
     }
-  }
 
-  a:link,
-  a:visited
-  {
-    text-decoration: none;
-    position: relative;
-    transition: color 0.4s;
-
-    &::before
+    a:link,
+    a:visited
     {
-      font-size: 1.3rem;
-      font-family:"Font Awesome 5 Free";
-      font-weight: 900;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.4s;
 
+      &::before
+      {
+        font-size: 1.3rem;
+        font-family:"Font Awesome 5 Free";
+        font-weight: 900;
+
+      }
     }
-  }
 
-  a:focus,
-  a:hover,
-  a:active
-  {
-    color: #FFC0A1;
+    a:focus,
+    a:hover,
+    a:active
+    {
+      color: #FFC0A1;
+    }
   }
 
   .counter

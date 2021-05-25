@@ -29,29 +29,29 @@
         }
       }
     }
-  }
 
-  a:link,
-  a:visited
-  {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    transition: background 0.4s;
-  }
-
-  a:focus,
-  a:hover,
-  a:active,
-  a.current
-  {
-    background: #FFF;
-    color: #000;
-
-    @media screen and (min-width: $bp-laptop)
+    a:link,
+    a:visited
     {
-      background-color: #416355;
-      color: #FFF;
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: background 0.4s;
+    }
+
+    a:focus,
+    a:hover,
+    a:active,
+    a.current
+    {
+      background: #FFF;
+      color: #000;
+
+      @media screen and (min-width: $bp-laptop)
+      {
+        background-color: #416355;
+        color: #FFF;
+      }
     }
   }
 

@@ -4,6 +4,14 @@
   border: 2px solid #FFC0A1;
   padding: 10px 20px;
   color: #000;
+  transition: 0.4s;
+
+  &:hover
+  {
+    background: #FFF;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
 
   &--sm
   {
