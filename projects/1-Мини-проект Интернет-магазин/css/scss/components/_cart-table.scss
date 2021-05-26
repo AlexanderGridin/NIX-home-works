@@ -1,0 +1,110 @@
+.cart-table
+{
+  margin-bottom: 25px;
+
+  &__product-photo,
+  &__product-price,
+  &__product-total-price,
+  &__product-actions
+  {
+    text-align: center;
+  }
+
+  &__product-photo
+  {
+    text-align: center;
+    width: 90px;
+  }
+
+  &__product-price,
+  &__product-total-price
+  {
+    width: 130px;
+    text-align: center;
+  }
+
+  &__product-quantity
+  {
+    width: 140px;
+    text-align: center;
+    
+    & > div
+    {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input[type="text"]
+    {
+      height: 25px;
+      text-align: center;
+      width: 50px;
+      margin: 0;
+    }
+
+    button
+    {
+      margin: 0;
+      background: #ddd;
+      border: none;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.4s;
+
+      &:focus,
+      &:hover,
+      &:active
+      {
+        background: #5f8173;
+        color: #FFF;
+        cursor: pointer;
+      }
+    }
+
+    &-decrease
+    {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &-increase
+    {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+
+  &__product-actions
+  {
+    width: 180px;
+  }
+
+  &__product-remove
+  {
+    font-size: 0.875rem;
+
+    &::before
+    {
+      content: "\f1f8";
+      margin-right: 7px;
+      font-family:"Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 1rem;
+    }
+  }
+
+  &__order-total
+  {
+    padding: 7px;
+    text-align: right;
+    background: #5F8173;
+    color: #FFF;
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.3rem;
+  }
+}

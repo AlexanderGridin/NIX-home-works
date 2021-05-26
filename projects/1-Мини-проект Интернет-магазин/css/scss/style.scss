@@ -1,7 +1,10 @@
 @import './abstracts/variables';
 
 @import './base/global';
-@import './base/layout';
+@import './base/utils';
+
+@import './layout/layouts';
+@import './layout/layout-elements';
 
 @import './components/button';
 @import './components/main-menu';
@@ -9,7 +12,23 @@
 @import './components/contacts';
 @import './components/slider';
 @import './components/promotion-card';
+@import './components/list';
+@import './components/products-catalogue-list';
+@import './components/products-list';
+@import './components/product-card';
+@import './components/callback-form';
+@import './components/catalogue-categories-list';
+@import './components/catalogue-category-card';
+@import './components/cart-table';
+@import './components/cart-form';
+@import './components/checkout-form';
 
 @import './sections/main-navigation';
 @import './sections/header-content';
 @import './sections/promotions';
+@import './sections/help';
+@import './sections/about';
+@import './sections/callback';
+@import './sections/footer';
+@import './sections/footer-content';
+@import './sections/copyright';

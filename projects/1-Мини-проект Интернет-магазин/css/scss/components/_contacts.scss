@@ -30,6 +30,8 @@
       flex-shrink: 0;
       font-weight: 900;
       color: #5F8173;
+      width: 17px;
+      text-align: center;
     }
   }
 
@@ -46,5 +48,19 @@
   &__email::before
   {
     content: "\f0e0";
+  }
+
+  &--inverted
+  {
+    .contacts
+    {
+      &__item
+      {
+        &::before
+        {
+          color: #FFF;
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,68 @@
+.layouts
+{
+  &__two-columns
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (min-width: $bp-laptop)
+    {
+      flex-direction: row;
+    }
+
+    &--sidebar
+    {
+      .column
+      {
+        // border: 1px solid red;
+
+        &:first-child
+        {
+          @media screen and (min-width: $bp-laptop)
+          {
+            margin-right: 25px;
+            flex-basis: 25%;
+            flex-shrink: 0;
+          }
+        }
+
+        &:last-child
+        {
+          flex-grow: 1;
+          flex-basis: 75%;
+        }
+      }
+    }
+
+    &--media-left
+    {
+      align-items: center;
+
+      @media screen and (min-width: $bp-laptop)
+      {
+        align-items: flex-start;
+      }
+
+      .column
+      {
+        &:first-child
+        {
+          margin-bottom: 25px;
+
+          @media screen and (min-width: $bp-laptop)
+          {
+            margin-right: 25px;
+            flex-basis: 35%;
+            flex-shrink: 0;
+          }
+        }
+
+        &:last-child
+        {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,20 +1,86 @@
 .button
 {
-  background: #FFC0A1;
-  border: 2px solid #FFC0A1;
-  padding: 10px 20px;
-  color: #000;
-  transition: 0.4s;
+  &,
+  &:link,
+  &:visited
+  {
+    background: #FFC0A1;
+    border: 2px solid #FFC0A1;
+    padding: 10px 20px;
+    color: #000;
+    transition: 0.4s;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  
 
-  &:hover
+  &:focus,
+  &:hover,
+  &:active
   {
     background: #FFF;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     cursor: pointer;
   }
 
+  &--callback
+  {
+    padding: 10px;
+    font-size: 0.99rem;
+
+    &::before
+    {
+      content: "\f879";
+      font-family:"Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 7px;
+    }
+  }
+
   &--sm
   {
     padding: 7px 10px;
+  }
+
+  &--error
+  {
+    &,
+    &:link,
+    &:visited
+    {
+      background: #DD5145;
+      color: #FFF;
+      border: 2px solid #DD5145;
+    }
+
+    &:focus,
+    &:hover,
+    &:active
+    {
+      background: #FFF;
+      color: #DD5145;
+    }
+  }
+
+  &--success
+  {
+    &,
+    &:link,
+    &:visited
+    {
+      background: #5F8173;
+      color: #FFF;
+      border: 2px solid #5F8173;
+    }
+
+    &:focus,
+    &:hover,
+    &:active
+    {
+      background: #FFF;
+      color: #5F8173;
+    }
   }
 }

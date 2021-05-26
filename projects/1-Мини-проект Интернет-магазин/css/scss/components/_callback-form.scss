@@ -1,0 +1,59 @@
+.callback-form
+{
+  input,
+  textarea
+  {
+    margin: 0;
+  }
+
+  textarea
+  {
+    height: 179px;
+    resize: none;
+  }
+
+  .form-items
+  {
+
+    @media screen and (min-width: $bp-tablet)
+    {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      height: 191px;
+    }
+  }
+
+  .form-item
+  {
+    @media screen and (min-width: $bp-tablet)
+    {
+      margin: 0;
+      width: 49%;
+      margin-bottom: 10px;
+
+      &:last-child
+      {
+        margin-left: 15px;
+      }
+    }
+
+    
+  }
+
+  .form-actions
+  {
+    text-align: center;
+
+    button[type="submit"]
+    {
+      &::before
+      {
+        content: "\f1d8";
+        font-family:"Font Awesome 5 Free";
+        font-weight: 900;
+        margin-right: 7px;
+      }
+    }
+  }
+}

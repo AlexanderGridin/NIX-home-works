@@ -1,0 +1,9 @@
+.help
+{
+  display: none;
+
+  @media screen and (min-width: $bp-laptop)
+  {
+    display: block;
+  }
+}

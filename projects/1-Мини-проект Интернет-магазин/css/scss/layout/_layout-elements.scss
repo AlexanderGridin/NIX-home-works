@@ -1,0 +1,111 @@
+.page
+{
+  min-height: 100vh;
+  height: 100%;
+
+  &__title
+  {
+    font-size: 1.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 35px 0;
+    position: relative;
+
+    @media screen and (min-width: $bp-tablet)
+    {
+      font-size: 2.5rem;
+    }
+
+    &::after
+    {
+      content: "";
+      display: block;
+      max-width: 270px;
+      width: 100%;
+      height: 1px;
+      background: #5F8173;
+      margin: auto;
+      margin-top: 10px;
+    }
+  }
+
+  &__content
+  {
+    padding-bottom: 55px;
+  }
+}
+
+.section
+{
+  padding: 25px 0;
+  margin: 0;
+
+  &__header
+  {
+    margin-bottom: 35px;
+  }
+
+  &__title
+  {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+
+    @media screen and (min-width: $bp-tablet)
+    {
+      font-size: 2rem;
+    }
+
+    &--md
+    {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 15px;
+
+      @media screen and (min-width: $bp-laptop)
+      {
+        text-align: left;
+      }
+    }
+
+    &--xs
+    {
+      font-size: 0.875rem;
+      text-align: left;
+      margin-bottom: 10px;
+      text-transform: none;
+    }
+  }
+
+  &__title-subtext
+  {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #aaa;
+
+    @media screen and (min-width: $bp-tablet)
+    {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.container
+{
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 0 15px;
+  position: relative;
+}
+
+.column
+{
+  margin: 0;
+}
+
+.block
+{
+  margin: 5px;
+  display: block;
+}

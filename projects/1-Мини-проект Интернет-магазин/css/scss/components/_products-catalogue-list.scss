@@ -1,0 +1,89 @@
+.products-catalogue-list
+{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &--xs
+  {
+    & > li
+    {
+      border-bottom: 1px dotted #efefef;
+      margin: 0;
+    }
+
+    li
+    {
+      a:link,
+      a:visited
+      {
+        text-decoration: none;
+        padding: 15px;
+        display: block;
+        transition: 0.4s;
+        position: relative;
+        color: #000;
+        display: flex;
+        align-items: flex-start;
+
+        &::before
+        {
+          content: "";
+          display: block;
+          font-family:"Font Awesome 5 Free";
+          font-weight: 900;
+          margin-right: 10px;
+          width: 25px;
+          text-align: center;
+          flex-shrink: 0;
+        }
+
+        &::after
+        {
+          content: "";
+          display: block;
+          width: 5px;
+          background: #5F8173;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: width 0.4s;
+          z-index: -1;
+        }
+      }
+
+      a:focus,
+      a:hover,
+      a:active
+      {
+        color: #FFF;
+
+        &::after
+        {
+          width: 100%;
+        }
+      }
+
+      &:nth-child(1) a::before
+      {
+        content: "\f70e";
+      }
+
+      &:nth-child(2) a::before
+      {
+        content: "\f55d";
+      }
+
+      &:nth-child(3) a::before
+      {
+        content: "\f575";
+      }
+
+      &:nth-child(4) a::before
+      {
+        content: "\f53b";
+      }
+    }
+  }
+}
