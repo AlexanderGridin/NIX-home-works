@@ -153,6 +153,12 @@ th {
   overflow-x: scroll;
 }
 
+@media screen and (min-width: 991px) {
+  .scrollable-table {
+    overflow-x: visible;
+  }
+}
+
 .scrollable-table::before {
   content: "Данная таблица поддерживает горизонтальную прокрутку";
   display: block;

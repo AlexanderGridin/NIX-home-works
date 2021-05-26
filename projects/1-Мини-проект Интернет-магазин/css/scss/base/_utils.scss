@@ -10,6 +10,11 @@
 {
   overflow-x: scroll;
 
+  @media screen and (min-width: $bp-laptop)
+  {
+    overflow-x: visible;
+  }
+
   &::before
   {
     content: "Данная таблица поддерживает горизонтальную прокрутку";
