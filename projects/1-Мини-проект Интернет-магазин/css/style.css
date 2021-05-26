@@ -37,6 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 img {
   max-width: 100%;
   height: auto;
+  margin: 0;
 }
 
 .visually-hidden {
@@ -298,6 +299,213 @@ img {
   content: "\f0e0";
 }
 
+.slider {
+  margin: 0;
+  position: relative;
+}
+
+.slider ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slider__slides li:not(.active) {
+  display: none;
+}
+
+.slider__direction-nav {
+  display: none;
+}
+
+@media screen and (min-width: 991px) {
+  .slider__direction-nav {
+    display: block;
+  }
+}
+
+.slider__direction-nav li {
+  margin: 0;
+}
+
+@media screen and (min-width: 991px) {
+  .slider__direction-nav .prev,
+  .slider__direction-nav .next {
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    background: none;
+    font-size: 0;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #5F8173;
+    color: #5F8173;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    opacity: 0.5;
+  }
+  .slider__direction-nav .prev:hover,
+  .slider__direction-nav .next:hover {
+    background: #5F8173;
+    color: #FFF;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    opacity: 1;
+  }
+  .slider__direction-nav .prev::before,
+  .slider__direction-nav .next::before {
+    content: "";
+    display: block;
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  .slider__direction-nav .prev {
+    left: 10px;
+  }
+  .slider__direction-nav .prev::before {
+    content: "\f060";
+  }
+  .slider__direction-nav .next {
+    right: 10px;
+  }
+  .slider__direction-nav .next::before {
+    content: "\f061";
+  }
+}
+
+.slider__paging {
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.slider__paging li {
+  margin: 5px;
+}
+
+.slider__paging button {
+  background: none;
+  border: none;
+  font-size: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #5F8173;
+  position: relative;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider__paging button:hover, .slider__paging button.active {
+  background: #FFC0A1;
+  cursor: pointer;
+}
+
+.promotion-card {
+  position: relative;
+}
+
+.promotion-card__media {
+  background: #5F8173;
+  position: relative;
+}
+
+.promotion-card__media img {
+  display: block;
+}
+
+.promotion-card__body {
+  padding: 15px 15px;
+  background: #5F8173;
+  color: #FFF;
+  max-width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.promotion-card__title h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 991px) {
+  .promotion-card--xl .promotion-card__media::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .promotion-card--xl .promotion-card__body {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    background: none;
+    max-width: 80%;
+  }
+  .promotion-card--xl .promotion-card__body > div {
+    max-width: 750px;
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  .promotion-card--xl .promotion-card__body {
+    max-width: 1200px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .promotion-card--xl .promotion-card__title h3 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .promotion-card--xl .promotion-card__title h3 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .promotion-card--xl .promotion-card__text {
+    font-size: 1.5rem;
+  }
+}
+
 .main-navigation {
   background-color: #5F8173;
   color: #FFF;
@@ -422,5 +630,9 @@ img {
 .header-content .contacts__location {
   max-width: 277px;
   width: 100%;
+}
+
+.promotions {
+  padding: 0;
 }
 /*# sourceMappingURL=style.css.map */

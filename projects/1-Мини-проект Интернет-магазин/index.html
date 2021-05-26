@@ -82,28 +82,44 @@
     <h2 class="visually-hidden">Акции</h2>
 
     <div class="promotions-slider slider">
-      <ul class="promotions-slider__slides">
+      <ul class="slider__slides">
         <li class="active">
-          <article class="promotion-card promotion-card--lg">
-            <img src="https://via.placeholder.com/1920x600.jpg" alt="Слайд 1">
-            <div class="promotion-card__body">
-              <div class="promotions-card__title">
-                <h3>Title 1</h3>
+          <article class="promotion-card promotion-card--xl">
+            <div class="promotion-card__header">
+              <div class="promotion-card__media">
+                <picture>
+                  <source srcset="https://via.placeholder.com/1920x600.jpg" media="(min-width: 1199px)">
+                  <source srcset="https://via.placeholder.com/1720x600.jpg" media="(min-width: 768px)">
+                  <source srcset="https://via.placeholder.com/767x400.jpg">
+                  <img srcset="https://via.placeholder.com/767x400.jpg" alt="My default image">
+                </picture>
               </div>
-              <div class="promotions-card__text">
+            </div>
+            <div class="promotion-card__body container">
+              <div class="promotion-card__title">
+                <h3>Скидка 30%</h3>
+              </div>
+              <div class="promotion-card__text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem et, nobis repellendus alias rerum quam eligendi magni ipsum laboriosam dolores architecto, facere iusto soluta ab, impedit illum obcaecati quas explicabo odio inventore vero debitis neque.</p>
               </div>
             </div>
           </article>
         </li>
         <li>
-          <article class="promotion-card promotion-card--lg">
-            <img src="https://via.placeholder.com/1920x600.jpg" alt="Слайд 1">
-            <div class="promotion-card__body">
-              <div class="promotions-card__title">
+          <article class="promotion-card promotion-card--xl">
+            <div class="promotion-card__header">
+              <picture>
+                <source srcset="https://via.placeholder.com/1920x600.jpg" media="(min-width: 1199px)">
+                <source srcset="https://via.placeholder.com/1720x600.jpg" media="(min-width: 768px)">
+                <source srcset="https://via.placeholder.com/767x400.jpg">
+                <img srcset="https://via.placeholder.com/767x400.jpg" alt="My default image">
+              </picture>
+            </div>
+            <div class="promotion-card__body container">
+              <div class="promotion-card__title">
                 <h3>Title 2</h3>
               </div>
-              <div class="promotions-card__text">
+              <div class="promotion-card__text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem et, nobis repellendus alias rerum quam eligendi
                   magni ipsum laboriosam dolores architecto, facere iusto soluta ab, impedit illum obcaecati quas explicabo odio
                   inventore vero debitis neque.</p>
@@ -112,13 +128,20 @@
           </article>
         </li>
         <li>
-          <article class="promotion-card promotion-card--lg">
-            <img src="https://via.placeholder.com/1920x600.jpg" alt="Слайд 1">
-            <div class="promotion-card__body">
-              <div class="promotions-card__title">
+          <article class="promotion-card promotion-card--xl">
+            <div class="promotion-card__header">
+              <picture>
+                <source srcset="https://via.placeholder.com/1920x600.jpg" media="(min-width: 1199px)">
+                <source srcset="https://via.placeholder.com/1720x600.jpg" media="(min-width: 768px)">
+                <source srcset="https://via.placeholder.com/767x400.jpg">
+                <img srcset="https://via.placeholder.com/767x400.jpg" alt="My default image">
+              </picture>
+            </div>
+            <div class="promotion-card__body container">
+              <div class="promotion-card__title">
                 <h3>Title 3</h3>
               </div>
-              <div class="promotions-card__text">
+              <div class="promotion-card__text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem et, nobis repellendus alias rerum quam eligendi
                   magni ipsum laboriosam dolores architecto, facere iusto soluta ab, impedit illum obcaecati quas explicabo odio
                   inventore vero debitis neque.</p>
@@ -127,12 +150,12 @@
           </article>
         </li>
       </ul>
-      <ul class="promotions-slider__direction-nav">
-        <li><button type="button">Предыдущий слайд</button></li>
-        <li><button type="button">Следующий слайд</button></li>
+      <ul class="slider__direction-nav">
+        <li><button class="prev" type="button">Предыдущий слайд</button></li>
+        <li><button class="next" type="button">Следующий слайд</button></li>
       </ul>
-      <ul class="promotions-slider__paging">
-        <li class="active"><button type="button">1</button></li>
+      <ul class="slider__paging">
+        <li><button class="active" type="button">1</button></li>
         <li><button type="button">2</button></li>
         <li><button type="button">3</button></li>
       </ul>

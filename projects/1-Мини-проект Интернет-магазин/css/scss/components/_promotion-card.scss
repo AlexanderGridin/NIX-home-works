@@ -1,0 +1,104 @@
+.promotion-card
+{
+  position: relative;
+
+  &__media
+  {
+    background: #5F8173;
+    position: relative;
+
+    img
+    {
+      display: block;
+    }
+  }
+
+  &__body
+  {
+    padding: 15px 15px;
+    background: #5F8173;
+    color: #FFF;
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title h3
+  {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &--xl
+  {
+    .promotion-card
+    {
+      &__media
+      {
+        @media screen and (min-width: $bp-laptop)
+        {
+          &::before
+          {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1
+          }
+        }
+      }
+
+      &__body
+      {
+
+        @media screen and (min-width: $bp-laptop)
+        {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          right: 0;
+          background: none;
+          max-width: 80%;
+
+          & > div
+          {
+            max-width: 750px;
+          }
+        }
+
+        @media screen and (min-width: $bp-desktop)
+        {
+          max-width: 1200px;
+        }
+        
+      }
+
+      &__title h3
+      {
+        @media screen and (min-width: $bp-tablet)
+        {
+          font-size: 2rem;
+        }
+
+        @media screen and (min-width: $bp-laptop)
+        {
+          font-size: 3rem;
+        }
+      }
+
+      &__text
+      {
+        @media screen and (min-width: $bp-laptop)
+        {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
