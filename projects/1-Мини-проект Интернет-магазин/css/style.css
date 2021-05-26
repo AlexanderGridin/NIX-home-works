@@ -489,6 +489,13 @@ th {
   }
 }
 
+.main-menu__mobile-trigger .button::before {
+  content: "\f0c9";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 7px;
+}
+
 .user-menu {
   padding: 0;
   padding-right: 10px;
