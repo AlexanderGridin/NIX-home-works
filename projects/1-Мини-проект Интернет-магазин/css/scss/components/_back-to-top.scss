@@ -1,0 +1,43 @@
+.back-to-top
+{
+  &,
+  &:link,
+  &:visited
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    font-size: 0;
+    border-radius: 50%;
+    transition: 0.4s;
+    background: #FFF;
+    text-decoration: none;
+    opacity: 0.5;
+    z-index: 9999;
+    border: 3px solid #FFC0A1;
+  }
+  
+  &::before
+  {
+    content: "\f077";
+    font-family:"Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1.5rem;
+    display: block;
+    color: #000;
+  }
+
+  &:hover,
+  &:focus,
+  &:active
+  {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background: #FFC0A1;
+  }
+}

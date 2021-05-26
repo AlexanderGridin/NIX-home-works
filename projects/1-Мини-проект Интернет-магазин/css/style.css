@@ -1489,6 +1489,48 @@ th {
   text-align: center;
 }
 
+.back-to-top, .back-to-top:link, .back-to-top:visited {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  font-size: 0;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background: #FFF;
+  text-decoration: none;
+  opacity: 0.5;
+  z-index: 9999;
+  border: 3px solid #FFC0A1;
+}
+
+.back-to-top::before {
+  content: "\f077";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.5rem;
+  display: block;
+  color: #000;
+}
+
+.back-to-top:hover, .back-to-top:focus, .back-to-top:active {
+  opacity: 1;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background: #FFC0A1;
+}
+
 .main-navigation {
   background-color: #5F8173;
   color: #FFF;
