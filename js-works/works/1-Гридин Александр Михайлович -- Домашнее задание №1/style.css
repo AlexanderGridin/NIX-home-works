@@ -1,0 +1,25 @@
+.custom-list
+{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #eee;
+}
+
+.custom-list li
+{
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-list li:last-child
+{
+  border-bottom: none;
+}
+
+.custom-list h3
+{
+  margin: 0;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}

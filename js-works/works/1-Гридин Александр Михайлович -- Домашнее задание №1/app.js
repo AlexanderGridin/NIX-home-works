@@ -4,6 +4,8 @@
 // task1();
 
 function task1(){
+  console.clear();
+
   let admin;
   let name;
 
@@ -11,7 +13,6 @@ function task1(){
   admin = name;
 
   logTaskResults('Задание №1', false, admin);
-  // alert(admin);
 }
 
 /* -------------------------------- */
@@ -20,6 +21,8 @@ function task1(){
 // task2();
 
 function task2(){
+  console.clear();
+
   let answerToTask2 = 'Буквы в верхнем регистре используются для имён констант, которые "жёстко закодированы" (когда их значение известно до начала выполнения скрипта и записывается непосредственно в код). В отличие от константы BIRTHDAY, константа age является "менее константной", т.к. её значение вычисляется. В связи с этим, её имя должно писаться в нижнем регистре.)';
   logTaskResults('Задание №2', false, answerToTask2);
 }
@@ -30,6 +33,8 @@ function task2(){
 // task3();
 
 function task3(){
+  console.clear();
+  
   let name = 'Alexander';
 
   let case1 = `hello ${1}`;
@@ -45,6 +50,8 @@ function task3(){
 // task4();
 
 function task4(){
+  console.clear();
+  
   let case1 = '' + 1 + 0;
   let case2 = '' - 1 + 0;
   let case3 = true + false;
@@ -69,13 +76,15 @@ function task4(){
 // task5();
 
 function task5(){
+  console.clear();
+
   let a = 1;
   let b = 1;
 
   let c = ++a;
   let d = b++;
 
-  logTaskResults('Задание №5', false, c, d);
+  logTaskResults('Задание №5', false, `Результат работы префиксной формы: ${c}`, `Результат работы постфиксной формы: ${d}`);
 }
 
 /* -------------------------------- */
@@ -84,11 +93,13 @@ function task5(){
 // task6();
 
 function task6(){
+  console.clear();
+
   let a = 2;
 
   let x = 1 + (a *= 2);
 
-  logTaskResults('Задание №6', false, a, x);
+  logTaskResults('Задание №6', false, `a = ${a}`, `x = ${x}`);
 }
 
 /* -------------------------------- */
@@ -97,6 +108,8 @@ function task6(){
 // task7();
 
 function task7(){
+  console.clear();
+
   let case1 = 5 > 4;
   let case2 = 'ананас' > 'яблоко';
   let case3 = '2' > '12';
@@ -114,8 +127,17 @@ function task7(){
 // task8();
 
 function task8(){
+  console.clear();
+
   let userName = prompt('Введите Ваше имя (результат отобразится в консоли)', '');
 
+  if(!userName){
+    logTaskResults('Задание №8', false, `Вы не ввели имя`);
+
+    return;
+  }
+
+  userName = userName.trim();
   logTaskResults('Задание №8', false, `Ваше имя: ${userName}`);
 }
 
@@ -125,6 +147,8 @@ function task8(){
 // task9();
 
 function task9(){
+  console.clear();
+
   /*
   if('0'){
     alert('Привет');
@@ -142,6 +166,8 @@ function task9(){
 // task10();
 
 function task10(){
+  console.clear();
+
   let officialJavscriptName = prompt('Каково \"официальное\" название JavaScript? (результат будет выведен в консоль)', '');
   let result  = '';
 
@@ -158,7 +184,7 @@ function task10(){
   officialJavscriptName = officialJavscriptName.trim().toLowerCase();
 
   if(officialJavscriptName === 'ecmascript'){
-    result = 'Верно';
+    result = 'Верно, ECMAScript!';
   } else {
     result = 'Не знаете? ECMAScript!';
   }
@@ -172,6 +198,8 @@ function task10(){
 // task11();
 
 function task11(){
+  console.clear();
+
   let userNumber = prompt('Введите число', '');
 
   if(userNumber === null){
@@ -184,8 +212,7 @@ function task11(){
     return;
   }
 
-  userNumber = userNumber.trim();
-  userNumber = +userNumber;
+  userNumber = +userNumber.trim();
 
   if(Number.isNaN(userNumber)){
     task11();
@@ -207,11 +234,29 @@ function task11(){
 // task12();
 
 function task12(){
-  let a = 2;
-  let b = 4;
-  let result = (a + b < 4) ? 'Мало' : 'Много';
+  console.clear()
 
-  logTaskResults('Задание №12', false, result);
+  let numbers = prompt('Введите 2 числа, разделенных пробелом, чтобы узнать, их сумма больше нашего загаднного числа, или меньше?', '');
+
+  if(numbers){
+    numbers = numbers.trim().split(' ');
+  } else {
+    logTaskResults('Задание №12', false, 'Что-то пошло не так при вводе чисел...');
+    return;
+  }
+
+  let[a, b] = numbers;
+
+  a = +a;
+  b = +b;
+
+  if(!Number.isNaN(a) && !Number.isNaN(b)){
+    let result = (a + b < 4) ? 'Мало' : 'Много';
+
+    logTaskResults('Задание №12', false, result);
+  } else {
+    logTaskResults('Задание №12', false, 'Извините, но данный пример работает только с числами');
+  }
 }
 
 /* -------------------------------- */
@@ -220,15 +265,17 @@ function task12(){
 // task13();
 
 function task13(){
+  console.clear();
+
   let message;
+  let login = prompt('Введите логин (Доступные логины - "Директор", "Сотрудник")', '');
 
-  let login = 'Директор';
-  // let login = 'Сотрудник';
-  // let login = '';
-  // let login = 3243;
+  if(login){
+    login = login.trim();
+  }
 
-  message = login === 'Сотрудник' ? 'Привет':
-            login === 'Директор'? 'Здравствуйте':
+  message = login === 'Сотрудник' ? 'Привет!':
+            login === 'Директор'? 'Здравствуйте!':
             login === '' ? 'Нет логина' : '';
 
   logTaskResults('Задание №13', false, message);
@@ -240,6 +287,8 @@ function task13(){
 // task14();
 
 function task14(){
+  console.clear();
+
   let result = null || 2 || undefined;
   let answerToTask14 = 'Возвращенным значением будет число 2, т.к. ИЛИ возвращает либо первый true, либо последний false.';
 
@@ -252,6 +301,8 @@ function task14(){
 // task15();
 
 function task15(){
+  console.clear();
+
   let result = alert(1) || 2 || alert(3);
   let answerToTask15 = 'Возвращенным значением будет число 2, т.к. alert() после нажатия на кнопку \"Ok\" возвращает undefined.';
 
@@ -264,6 +315,8 @@ function task15(){
 // task16();
 
 function task16(){
+  console.clear();
+
   let result = 1 && null && 2;
   let answerToTask16 = 'Возвращенным значением будет null, т.к. И возвращает либо первый false, либо последний true.';
 
@@ -276,6 +329,8 @@ function task16(){
 // task17();
 
 function task17(){
+  console.clear();
+
   let result = alert(1) && alert(2);
   let answerToTask17 = 'Возвращенным значением будет undefined, т.к. alert() после нажатия на кнопку \"Ok\" возвращает undefined.';
 
@@ -288,6 +343,8 @@ function task17(){
 // task18();
 
 function task18(){
+  console.clear();
+
   let result = null || 2 && 3 || 4;
   let answerToTask18 = 'Возвращенным значением будет число 3. У оператора И больший приоритет, поэтому он выполнится первым и вернет число 3, т.к. возвращает либо первый false, либо последний true. Затем слева на право выполнится оператор ИЛИ и вернет число 3, т.к. ИЛИ возвращает либо первый true, либо последний false.';
 
@@ -300,7 +357,14 @@ function task18(){
 // task19();
 
 function task19(){
-  let age = 14;
+  console.clear();
+
+  let age = +prompt('Введите Ваш возраст', '');
+
+  if(Number.isNaN(age) || !age){
+    logTaskResults('Задание №19', false, 'Извините, но так уж сложилось, что возраст должен быть числом');
+    return;
+  }
 
   let successMessage = 'Вам от 14 до 90 лет';
   let failureMessage = 'Вам либо меньше 14, либо больше 90 лет';
@@ -318,20 +382,24 @@ function task19(){
 /* -------------------------------- */
 /* Задание №20
 /* -------------------------------- */
-task20();
+// task20();
 
-function task20(){
+function task20(subtaskNumber){
+  console.clear();
+
   let taskTitle = 'Задание №20';
-  let age = 16;
+  let age = +prompt('Введите Ваш возраст', '');
+
+  if(Number.isNaN(age) || !age){
+    logTaskResults(taskTitle, false, 'Извините, но так уж сложилось, что возраст должен быть числом');
+    return;
+  }
 
   let successMessage = 'Вам либо 14 лет и меньше, либо 90 лет и больше';
   let failureMessage = 'Вам от 15 до 89 лет';
   let errorMessage = 'Возраст не может быть отрицательным числом!';
 
-  // task20_1();
-  // task20_2();
-
-  function task20_1(){
+  if(subtaskNumber === 1){
     if(!(age > 14) || !(age < 90)){
       logTaskResults(taskTitle, false, successMessage);
     } else if(age < 0){
@@ -341,7 +409,7 @@ function task20(){
     }
   }
 
-  function task20_2(){
+  if(subtaskNumber === 2){
     if(age <= 14 || age >= 90 ){
       logTaskResults(taskTitle, false, successMessage);
     } else if(age < 0){
@@ -358,6 +426,8 @@ function task20(){
 // task21();
 
 function task21(){
+  console.clear();
+
   let taskTitle = 'Задание №21';
 
   let answerToTask21 = 'Выведутся все, кроме значения \"second\". Число, независимо от того, положительное оно, или отрицательное, при преобразовании в Boolean возвращает true, если оно не равно нулю. \"third\" выводится, т.к. сначала вычисляется оператор && (его приоритет больше, чем ||), который возвращает true, затем вычисляется оператор ||.';
@@ -387,12 +457,13 @@ function task21(){
 // task22();
 
 function task22(){
-  let taskTitle = 'Задание №22';
+  console.clear();
 
+  let taskTitle = 'Задание №22';
   let userLogin = prompt('Введите логин', '');
 
   if(userLogin === null || userLogin === ''){
-    logTaskResults(taskTitle, false, 'Ввод логина отменен.');
+    logTaskResults(taskTitle, false, 'Ввод логина отменен или не был выполнен.');
     return;
   }
 
@@ -402,7 +473,7 @@ function task22(){
     let password = prompt('Введите пароль', '');
 
     if(password === null || password === ''){
-      logTaskResults(taskTitle, false, 'Ввод пароля отменен.');
+      logTaskResults(taskTitle, false, 'Ввод пароля отменен или не был выполнен.');
       return;
     }
 
@@ -424,9 +495,17 @@ function task22(){
 // task23();
 
 function task23(){
-  let taskTitle = 'Задание №23';
+  console.clear();
 
-  let browser = 'Brave';
+  let taskTitle = 'Задание №23';
+  let browser = prompt('Ввдеите название браузера', '');
+
+  if(browser){
+    browser = browser.trim();
+  } else {
+    logTaskResults(taskTitle, false, 'Что-то пошло не так при вводе названия браузера...');
+    return;
+  }
 
   if(browser === 'Edge'){
     logTaskResults(taskTitle, false, 'You\'ve got the Edge!');
@@ -448,8 +527,10 @@ function task23(){
 // task24();
 
 function task24(){
+  console.clear();
+
   let taskTitle = 'Задание №24';
-  let a = +prompt('a?', '');
+  let a = +prompt('a? (Если что, это должно быть число:))', '');
 
   switch(a){
     case 0:
@@ -467,7 +548,6 @@ function task24(){
 
     default:
       logTaskResults(taskTitle, false, 'Some other numbers');
-
   }
 }
 
@@ -477,12 +557,18 @@ function task24(){
 // task25();
 
 function task25(){
+  console.clear();
+
   let taskTitle = 'Задание №25';
-  let number = 5;
+  let number = +prompt('Введите число (можно больше, или меньше нуля)', '');
+
+  if(!number){
+    logTaskResults(taskTitle, false, 'Что-то пошло не так при вводе числа...');
+    return;
+  }
 
   if(number >= 0){
     number++;
-
     logTaskResults(taskTitle, false, number);
   } else {
     logTaskResults(taskTitle, false, number);
@@ -495,8 +581,15 @@ function task25(){
 // task26();
 
 function task26(){
+  console.clear();
+
   let taskTitle = 'Задание №26';
-  let number = -1;
+  let number = +prompt('Введите число (можно больше, или меньше нуля)', '');
+
+  if(!number){
+    logTaskResults(taskTitle, false, 'Что-то пошло не так при вводе числа...');
+    return;
+  }
 
   if(number >= 0){
     number++;
@@ -513,8 +606,15 @@ function task26(){
 // task27();
 
 function task27(){
+  console.clear();
+
   let taskTitle = 'Задание №27';
-  let number = -1;
+  let number = +prompt('Введите число (можно больше, или меньше нуля)', '');
+
+  if(!number && number !== 0){
+    logTaskResults(taskTitle, false, 'Что-то пошло не так при вводе числа...');
+    return;
+  }
 
   if(number === 0){
     number = 10;
@@ -533,6 +633,8 @@ function task27(){
 // task28();
 
 function task28(){
+  console.clear();
+
   let taskTitle = 'Задание №28';
   let positiveNumbersCounter = 0;
 
@@ -564,6 +666,8 @@ function task28(){
 // task29();
 
 function task29(){
+  console.clear();
+
   let taskTitle = 'Задание №29';
   let positiveNumbersCounter = 0;
   let negativeNumbersCounter = 0;
@@ -608,6 +712,8 @@ function task29(){
 // task30();
 
 function task30(){
+  console.clear();
+
   let taskTitle = 'Задание №30';
 
   let min = -10;
@@ -631,6 +737,8 @@ function task30(){
 // task31();
 
 function task31(){
+  console.clear();
+
   let taskTitle = 'Задание №31';
 
   let min = -10;
@@ -654,6 +762,8 @@ function task31(){
 // task32();
 
 function task32(){
+  console.clear();
+
   let taskTitle = 'Задание №32';
 
   let min = -10;
@@ -661,13 +771,18 @@ function task32(){
 
   let num1 = getRandomNumber(min, max);
   let num2 = getRandomNumber(min, max);
+  let defaultsInfo = `Сгенерированные числа: ${num1}, ${num2}`;
 
   if(num1 > num2){
-    logTaskResults(taskTitle, false, `Сгенерированные числа: ${num1}, ${num2}`, `Числа в порядке от большего к меньшему: ${num1}, ${num2}`);
+    logTaskResults(taskTitle, false, defaultsInfo, `Числа в порядке от большего к меньшему: ${num1}, ${num2}`);
   }
 
   if(num2 > num1){
-    logTaskResults(taskTitle, false, `Сгенерированные числа: ${num1}, ${num2}`, `Числа в порядке от большего к меньшему: ${num2}, ${num1}`);
+    logTaskResults(taskTitle, false, defaultsInfo, `Числа в порядке от большего к меньшему: ${num2}, ${num1}`);
+  }
+
+  if(num1 === num2){
+    logTaskResults(taskTitle, false, defaultsInfo, `Числа равны`);
   }
 }
 
@@ -677,6 +792,8 @@ function task32(){
 // task33();
 
 function task33(){
+  console.clear();
+
   let taskTitle = 'Задание №33';
 
   let a = 3.14;
@@ -700,6 +817,8 @@ function task33(){
 // task33alternate();
 
 function task33alternate(){
+  console.clear();
+
   let taskTitle = 'Задание №33 (альтернативный вариант)';
 
   let a = 3.14;
@@ -718,32 +837,39 @@ function task33alternate(){
 /* -------------------------------- */
 // task34();
 
-function task34(){
+function task34(taskCase){
+  console.clear();
+
   let taskTitle = 'Задание №34';
 
-  let min = -10;
-  let max = 10;
+  let minOfRange = -10;
+  let maxOfRange = 10;
 
-  let a = getRandomNumber(min, max);
-  let b = getRandomNumber(min, max);
+  let a;
+  let b;
 
-  // a = b = 10;
+  switch(taskCase){
+    case 1:
+      a = getRandomNumber(minOfRange, maxOfRange);
+      b = getRandomNumber(minOfRange, maxOfRange);
+      break;
+    
+    case 2:
+    a = b = 10;
+    break;
+  }
 
   let defaultsInfo = `Исходные переменные: a: ${a}, b: ${b}`;
 
   if(a !== b){
     let sum = a + b;
-
     a = b = sum;
-
     logTaskResults(taskTitle, false, defaultsInfo, `Новые значения переменных: a: ${a}, b: ${b}`);
 
     return;
   }else {
     a = b = 0;
-
     logTaskResults(taskTitle, false, defaultsInfo, `Новые значения переменных: a: ${a}, b: ${b}`);
-
     return;
   }
 }
@@ -753,30 +879,37 @@ function task34(){
 /* -------------------------------- */
 // task35();
 
-function task35(){
+function task35(taskCase){
+  console.clear();
+
   let taskTitle = 'Задание №35';
 
-  let min = -10;
-  let max = 10;
+  let minOfRange = -10;
+  let maxOfRange = 10;
 
-  let a = getRandomNumber(min, max);
-  let b = getRandomNumber(min, max);
+  let a;
+  let b;
 
-  // a = b = 10;
+  switch(taskCase){
+    case 1:
+      a = getRandomNumber(minOfRange, maxOfRange);
+      b = getRandomNumber(minOfRange, maxOfRange);
+      break;
+
+    case 2:
+      a = b = 10;
+      break;
+  }
 
   let defaultsInfo = `Исходные переменные: a: ${a}, b: ${b}`;
 
   if(a !== b){
     a = b = (a > b) ? a : b;
-
     logTaskResults(taskTitle, false, defaultsInfo, `Новые значения переменных: a: ${a}, b: ${b}`);
-
     return;
   } else {
     a = b = 0;
-
     logTaskResults(taskTitle, false, defaultsInfo, `Новые значения переменных: a: ${a}, b: ${b}`);
-
     return;
   }
 }
@@ -787,6 +920,8 @@ function task35(){
 // task36();
 
 function task36(){
+  console.clear();
+
   let taskTitle = 'Задание №36';
 
   let minOfRange = -10;
@@ -818,6 +953,8 @@ function task36(){
 // task37();
 
 function task37(){
+  console.clear();
+
   let taskTitle = 'Задание №37';
 
   let minOfRange = -10;
@@ -863,6 +1000,8 @@ function task37(){
 // task38();
 
 function task38(){
+  console.clear();
+
   let taskTitle = 'Задание №38';
 
   let minOfRange = -10;
@@ -908,6 +1047,8 @@ function task38(){
 // task39();
 
 function task39(){
+  console.clear();
+
   let taskTitle = 'Задание №39';
 
   let minOfRange = -10;
@@ -952,49 +1093,53 @@ function task39(){
 /* -------------------------------- */
 /* Задание №40
 /* -------------------------------- */
-task40();
+// task40();
 
-function task40(){
+function task40(taskCase){
+  console.clear();
+
   let taskTitle = 'Задание №40';
 
   let num1;
   let num2;
   let num3;
 
-  num1 = 0;
-  num2 = 1;
-  num3 = 0;
+  switch(taskCase){
+    case 1:
+      num1 = 1;
+      num2 = 0;
+      num3 = 0;
+      break;
 
-  // num1 = 1;
-  // num2 = 0;
-  // num3 = 0;
+    case 2:
+      num1 = 0;
+      num2 = 1;
+      num3 = 0;
+      break;
 
-  // num1 = 0;
-  // num2 = 0;
-  // num3 = 1;
+    case 3:
+      num1 = 0;
+      num2 = 0;
+      num3 = 1;
+      break;
+  }
 
   let defaultsInfo = `Переменные: ${num1}, ${num2}, ${num3}`;
   let uniqueNumPosition;
 
   if(num2 !== num1 && num2 !== num3){
     uniqueNumPosition = 2;
-
     logTaskResults(taskTitle, false, defaultsInfo, `Позиция уникального числа: ${uniqueNumPosition}`);
-
     return;
   }
 
   if(num2 !== num1){
     uniqueNumPosition = 1;
-
     logTaskResults(taskTitle, false, defaultsInfo, `Позиция уникального числа: ${uniqueNumPosition}`);
-
     return;
   } else {
     uniqueNumPosition = 3;
-
     logTaskResults(taskTitle, false, defaultsInfo, `Позиция уникального числа: ${uniqueNumPosition}`);
-
     return;
   }
 }
