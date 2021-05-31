@@ -714,6 +714,292 @@ function task33alternate(){
 }
 
 /* -------------------------------- */
+/* Задание №34
+/* -------------------------------- */
+// task34();
+
+function task34(){
+  let taskTitle = 'Задание №34';
+
+  let min = -10;
+  let max = 10;
+
+  let a = getRandomNumber(min, max);
+  let b = getRandomNumber(min, max);
+
+  // a = b = 10;
+
+  let defaultsInfo = `Исходные переменные: a: ${a}, b: ${b}`;
+
+  if(a !== b){
+    let sum = a + b;
+
+    a = b = sum;
+
+    logTaskResults(taskTitle, false, defaultsInfo, `Новые значения переменных: a: ${a}, b: ${b}`);
+
+    return;
+  }else {
+    a = b = 0;
+
+    logTaskResults(taskTitle, false, defaultsInfo, `Новые значения переменных: a: ${a}, b: ${b}`);
+
+    return;
+  }
+}
+
+/* -------------------------------- */
+/* Задание №35
+/* -------------------------------- */
+// task35();
+
+function task35(){
+  let taskTitle = 'Задание №35';
+
+  let min = -10;
+  let max = 10;
+
+  let a = getRandomNumber(min, max);
+  let b = getRandomNumber(min, max);
+
+  // a = b = 10;
+
+  let defaultsInfo = `Исходные переменные: a: ${a}, b: ${b}`;
+
+  if(a !== b){
+    a = b = (a > b) ? a : b;
+
+    logTaskResults(taskTitle, false, defaultsInfo, `Новые значения переменных: a: ${a}, b: ${b}`);
+
+    return;
+  } else {
+    a = b = 0;
+
+    logTaskResults(taskTitle, false, defaultsInfo, `Новые значения переменных: a: ${a}, b: ${b}`);
+
+    return;
+  }
+}
+
+/* -------------------------------- */
+/* Задание №36
+/* -------------------------------- */
+// task36();
+
+function task36(){
+  let taskTitle = 'Задание №36';
+
+  let minOfRange = -10;
+  let maxOfRange = 10;
+
+  let num1 = getRandomNumber(minOfRange, maxOfRange);
+  let num2 = getRandomNumber(minOfRange, maxOfRange);
+  let num3 = getRandomNumber(minOfRange, maxOfRange);
+  let min;
+
+  let defaultsInfo = `Сгенерированные переменные: ${num1}, ${num2}, ${num3}`;
+
+  if(num1 <= num2){
+    min = num1;
+  } else {
+    min = num2;
+  }
+
+  if(min > num3){
+    min = num3;
+  }
+
+  logTaskResults(taskTitle, false, defaultsInfo, `Наименьшее из трёх чисел: ${min}`);
+}
+
+/* -------------------------------- */
+/* Задание №37
+/* -------------------------------- */
+// task37();
+
+function task37(){
+  let taskTitle = 'Задание №37';
+
+  let minOfRange = -10;
+  let maxOfRange = 10;
+
+  let num1 = getRandomNumber(minOfRange, maxOfRange);
+  let num2 = getRandomNumber(minOfRange, maxOfRange);
+  let num3 = getRandomNumber(minOfRange, maxOfRange);
+  let tmp;
+
+  let defaultsInfo = `Сгенерированные переменные: ${num1}, ${num2}, ${num3}`;
+  let sortedInfo;
+
+  if(num1 > num2){
+    tmp = num1;
+    num1 = num2;
+    num2 = tmp;
+    tpm = null;
+  }
+
+  if(num1 > num3){
+    tpm = num1;
+    num1 = num3;
+    num3 = tpm;
+    tpm = null;
+  }
+
+  if(num2 > num3){
+    tpm = num2;
+    num2 = num3;
+    num3 = tpm;
+    tpm = null;
+  }
+
+  sortedInfo = `Отсортированные переменные: ${num1}, ${num2}, ${num3}`;
+
+  logTaskResults(taskTitle, false, defaultsInfo, sortedInfo, `Среднее из трёх чисел: ${num2}`);
+}
+
+/* -------------------------------- */
+/* Задание №38
+/* -------------------------------- */
+// task38();
+
+function task38(){
+  let taskTitle = 'Задание №38';
+
+  let minOfRange = -10;
+  let maxOfRange = 10;
+
+  let num1 = getRandomNumber(minOfRange, maxOfRange);
+  let num2 = getRandomNumber(minOfRange, maxOfRange);
+  let num3 = getRandomNumber(minOfRange, maxOfRange);
+  let tmp;
+
+  let defaultsInfo = `Сгенерированные переменные: ${num1}, ${num2}, ${num3}`;
+  let sortedInfo;
+
+  if(num1 > num2){
+    tmp = num1;
+    num1 = num2;
+    num2 = tmp;
+    tpm = null;
+  }
+
+  if(num1 > num3){
+    tpm = num1;
+    num1 = num3;
+    num3 = tpm;
+    tpm = null;
+  }
+
+  if(num2 > num3){
+    tpm = num2;
+    num2 = num3;
+    num3 = tpm;
+    tpm = null;
+  }
+
+  sortedInfo = `Отсортированные переменные: ${num1}, ${num2}, ${num3}`;
+
+  logTaskResults(taskTitle, false, defaultsInfo, sortedInfo, `Наименьшее из трёх чисел: ${num1}. Наибольшее из трёх чисел: ${num3}`);
+}
+
+/* -------------------------------- */
+/* Задание №39
+/* -------------------------------- */
+// task39();
+
+function task39(){
+  let taskTitle = 'Задание №39';
+
+  let minOfRange = -10;
+  let maxOfRange = 10;
+
+  let num1 = getRandomNumber(minOfRange, maxOfRange);
+  let num2 = getRandomNumber(minOfRange, maxOfRange);
+  let num3 = getRandomNumber(minOfRange, maxOfRange);
+  let tmp;
+  let summOfTwoBiggestNumbers;
+
+  let defaultsInfo = `Сгенерированные переменные: ${num1}, ${num2}, ${num3}`;
+  let sortedInfo;
+
+  if(num1 > num2){
+    tmp = num1;
+    num1 = num2;
+    num2 = tmp;
+    tpm = null;
+  }
+
+  if(num1 > num3){
+    tpm = num1;
+    num1 = num3;
+    num3 = tpm;
+    tpm = null;
+  }
+
+  if(num2 > num3){
+    tpm = num2;
+    num2 = num3;
+    num3 = tpm;
+    tpm = null;
+  }
+
+  sortedInfo = `Отсортированные переменные: ${num1}, ${num2}, ${num3}`;
+  summOfTwoBiggestNumbers = num2 + num3;
+
+  logTaskResults(taskTitle, false, defaultsInfo, sortedInfo, `Сумма двух наибольших чисел: ${summOfTwoBiggestNumbers}`);
+}
+
+/* -------------------------------- */
+/* Задание №40
+/* -------------------------------- */
+task40();
+
+function task40(){
+  let taskTitle = 'Задание №40';
+
+  let num1;
+  let num2;
+  let num3;
+
+  num1 = 0;
+  num2 = 1;
+  num3 = 0;
+
+  // num1 = 1;
+  // num2 = 0;
+  // num3 = 0;
+
+  // num1 = 0;
+  // num2 = 0;
+  // num3 = 1;
+
+  let defaultsInfo = `Переменные: ${num1}, ${num2}, ${num3}`;
+  let uniqueNumPosition;
+
+  if(num2 !== num1 && num2 !== num3){
+    uniqueNumPosition = 2;
+
+    logTaskResults(taskTitle, false, defaultsInfo, `Позиция уникального числа: ${uniqueNumPosition}`);
+
+    return;
+  }
+
+  if(num2 !== num1){
+    uniqueNumPosition = 1;
+
+    logTaskResults(taskTitle, false, defaultsInfo, `Позиция уникального числа: ${uniqueNumPosition}`);
+
+    return;
+  } else {
+    uniqueNumPosition = 3;
+
+    logTaskResults(taskTitle, false, defaultsInfo, `Позиция уникального числа: ${uniqueNumPosition}`);
+
+    return;
+  }
+}
+
+/* -------------------------------- */
 /* TOOLS
 /* -------------------------------- */
 function logTaskResults(taskTitle, separation = false, ...results){
