@@ -1,6 +1,11 @@
-.container
+:root
 {
-  max-width: 500px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.block
+{
+  max-width: 600px;
   margin: auto;
   margin-top: 35px;
   text-align: center;
