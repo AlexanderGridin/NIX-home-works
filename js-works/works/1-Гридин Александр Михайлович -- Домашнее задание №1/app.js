@@ -478,16 +478,239 @@ function task24(){
 
 function task25(){
   let taskTitle = 'Задание №25';
-
   let number = 5;
 
-  if(number > 0){
+  if(number >= 0){
     number++;
 
     logTaskResults(taskTitle, false, number);
   } else {
     logTaskResults(taskTitle, false, number);
   }
+}
+
+/* -------------------------------- */
+/* Задание №26
+/* -------------------------------- */
+// task26();
+
+function task26(){
+  let taskTitle = 'Задание №26';
+  let number = -1;
+
+  if(number >= 0){
+    number++;
+  } else {
+    number -= 2;
+  }
+
+  logTaskResults(taskTitle, false, number);
+}
+
+/* -------------------------------- */
+/* Задание №27
+/* -------------------------------- */
+// task27();
+
+function task27(){
+  let taskTitle = 'Задание №27';
+  let number = -1;
+
+  if(number === 0){
+    number = 10;
+  } else if(number > 0){
+    number++;
+  } else {
+    number -= 2;
+  }
+
+  logTaskResults(taskTitle, false, number);
+}
+
+/* -------------------------------- */
+/* Задание №28
+/* -------------------------------- */
+// task28();
+
+function task28(){
+  let taskTitle = 'Задание №28';
+  let positiveNumbersCounter = 0;
+
+  let min = -10;
+  let max = 10;
+
+  let num1 = getRandomNumber(min, max);
+  let num2 = getRandomNumber(min, max);
+  let num3 = getRandomNumber(min, max);
+
+  if(num1 > 0){
+    positiveNumbersCounter++;
+  }
+
+  if(num2 > 0){
+    positiveNumbersCounter++;
+  }
+
+  if(num3 > 0){
+    positiveNumbersCounter++;
+  }
+
+  logTaskResults(taskTitle, false, `Диапазон генерации чисел: ${min} -- ${max}`, `Сгенерированные числа: ${num1} ${num2} ${num3}`, `Количество положительных чисел: ${positiveNumbersCounter}`);
+}
+
+/* -------------------------------- */
+/* Задание №29
+/* -------------------------------- */
+// task29();
+
+function task29(){
+  let taskTitle = 'Задание №29';
+  let positiveNumbersCounter = 0;
+  let negativeNumbersCounter = 0;
+
+  let min = -10;
+  let max = 10;
+
+  let num1 = getRandomNumber(min, max);
+  let num2 = getRandomNumber(min, max);
+  let num3 = getRandomNumber(min, max);
+
+  if(num1 > 0){
+    positiveNumbersCounter++;
+  }
+
+  if(num1 < 0){
+    negativeNumbersCounter++;
+  }
+
+  if(num2 > 0){
+    positiveNumbersCounter++;
+  }
+
+  if(num2 < 0){
+    negativeNumbersCounter++;
+  }
+
+  if(num3 > 0){
+    positiveNumbersCounter++;
+  }
+
+  if(num3 < 0){
+    negativeNumbersCounter++;
+  }
+
+  logTaskResults(taskTitle, false, `Диапазон генерации чисел: ${min} -- ${max}`, `Сгенерированные числа: ${num1} ${num2} ${num3}`, `Количество положительных чисел: ${positiveNumbersCounter}`, `Количество отрицательных чисел: ${negativeNumbersCounter}`);
+}
+
+/* -------------------------------- */
+/* Задание №30
+/* -------------------------------- */
+// task30();
+
+function task30(){
+  let taskTitle = 'Задание №30';
+
+  let min = -10;
+  let max = 10;
+
+  let num1 = getRandomNumber(min, max);
+  let num2 = getRandomNumber(min, max);
+
+  if(num1 > num2){
+    logTaskResults(taskTitle, false, `Сгенерированные числа: ${num1}, ${num2}`, `Большее из двух чисел: ${num1}`);
+  }
+
+  if(num2 > num1){
+    logTaskResults(taskTitle, false, `Сгенерированные числа: ${num1}, ${num2}`, `Большее из двух чисел: ${num2}`);
+  }
+}
+
+/* -------------------------------- */
+/* Задание №31
+/* -------------------------------- */
+// task31();
+
+function task31(){
+  let taskTitle = 'Задание №31';
+
+  let min = -10;
+  let max = 10;
+
+  let num1 = getRandomNumber(min, max);
+  let num2 = getRandomNumber(min, max);
+
+  if(num1 < num2){
+    logTaskResults(taskTitle, false, `Сгенерированные числа: №1: ${num1}, №2: ${num2}`, `Порядковый номер меньшего числа: №1`);
+  }
+
+  if(num2 < num1){
+    logTaskResults(taskTitle, false, `Сгенерированные числа: №1: ${num1}, №2: ${num2}`, `Порядковый номер меньшего числа: №2`);
+  }
+}
+
+/* -------------------------------- */
+/* Задание №32
+/* -------------------------------- */
+// task32();
+
+function task32(){
+  let taskTitle = 'Задание №32';
+
+  let min = -10;
+  let max = 10;
+
+  let num1 = getRandomNumber(min, max);
+  let num2 = getRandomNumber(min, max);
+
+  if(num1 > num2){
+    logTaskResults(taskTitle, false, `Сгенерированные числа: ${num1}, ${num2}`, `Числа в порядке от большего к меньшему: ${num1}, ${num2}`);
+  }
+
+  if(num2 > num1){
+    logTaskResults(taskTitle, false, `Сгенерированные числа: ${num1}, ${num2}`, `Числа в порядке от большего к меньшему: ${num2}, ${num1}`);
+  }
+}
+
+/* -------------------------------- */
+/* Задание №33
+/* -------------------------------- */
+// task33();
+
+function task33(){
+  let taskTitle = 'Задание №33';
+
+  let a = 3.14;
+  let b = 2.34;
+  let defaultsInfo = `Исходные переменные: a: ${a}, b: ${b}`;
+  let temp;
+
+  if(a > b){
+    temp = b;
+    b = a;
+    a = temp;
+    temp = null;
+  }
+
+  logTaskResults(taskTitle, false, 'Решение с использованием временной переменной.', defaultsInfo, `Новые значения переменных: a: ${a}, b: ${b}`);
+}
+
+/* -------------------------------- */
+/* Задание №33 (Альтернативный вариант)
+/* -------------------------------- */
+// task33alternate();
+
+function task33alternate(){
+  let taskTitle = 'Задание №33 (альтернативный вариант)';
+
+  let a = 3.14;
+  let b = 2.34;
+  let defaultsInfo = `Исходные переменные: a: ${a}, b: ${b}`;
+
+  if(a > b){
+    [b,a] = [a,b];
+  }
+
+  logTaskResults(taskTitle, false, 'Решение с использованием деструктурирующего присваивания.', defaultsInfo, `Новые значения переменных: a: ${a}, b: ${b}`);
 }
 
 /* -------------------------------- */
@@ -509,4 +732,9 @@ function logTaskResults(taskTitle, separation = false, ...results){
   });
 
   console.groupEnd();
+}
+
+function getRandomNumber(min, max){
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
 }
