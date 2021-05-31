@@ -169,7 +169,141 @@ function task10(){
 /* -------------------------------- */
 /* Задание №11
 /* -------------------------------- */
+// task11();
 
+function task11(){
+  let userNumber = prompt('Введите число', '');
+
+  if(userNumber === null){
+    logTaskResults('Задание №11', false, 'Вы отменили ввод текста');
+    return;
+  }
+
+  if(userNumber === ''){
+    task11();
+    return;
+  }
+
+  userNumber = userNumber.trim();
+  userNumber = +userNumber;
+
+  if(Number.isNaN(userNumber)){
+    task11();
+    return;
+  }
+
+  if(userNumber == 0){
+    logTaskResults('Задание №11', false, 0);
+  } else if(userNumber > 0){
+    logTaskResults('Задание №11', false, 1);
+  } else {
+    logTaskResults('Задание №11', false, -1);
+  }
+}
+
+/* -------------------------------- */
+/* Задание №12
+/* -------------------------------- */
+// task12();
+
+function task12(){
+  let a = 2;
+  let b = 4;
+  let result = (a + b < 4) ? 'Мало' : 'Много';
+
+  logTaskResults('Задание №12', false, result);
+}
+
+/* -------------------------------- */
+/* Задание № 13
+/* -------------------------------- */
+// task13();
+
+function task13(){
+  let message;
+
+  let login = 'Директор';
+  // let login = 'Сотрудник';
+  // let login = '';
+  // let login = 3243;
+
+  message = login === 'Сотрудник' ? 'Привет':
+            login === 'Директор'? 'Здравствуйте':
+            login === '' ? 'Нет логина' : '';
+
+  logTaskResults('Задание №13', false, message);
+}
+
+/* -------------------------------- */
+/* Задание №14
+/* -------------------------------- */
+// task14();
+
+function task14(){
+  let result = null || 2 || undefined;
+  let answerToTask14 = 'Возвращенным значением будет число 2, т.к. ИЛИ возвращает либо первый true, либо последний false.';
+
+  logTaskResults('Задание №14', false, `Возвращенное значение: ${result}`, answerToTask14);
+}
+
+/* -------------------------------- */
+/* Задание №15
+/* -------------------------------- */
+// task15();
+
+function task15(){
+  let result = alert(1) || 2 || alert(3);
+  let answerToTask15 = 'Возвращенным значением будет число 2, т.к. alert() после нажатия на кнопку \"Ok\" возвращает undefined.';
+
+  logTaskResults('Задание №15', false, `Возвращенное значение: ${result}`, answerToTask15);
+}
+
+/* -------------------------------- */
+/* Задание №16
+/* -------------------------------- */
+// task16();
+
+function task16(){
+  let result = 1 && null && 2;
+  let answerToTask16 = 'Возвращенным значением будет null, т.к. И возвращает либо первый false, либо последний true.';
+
+  logTaskResults('Задание №16', false, `Возвращенное значение: ${result}`, answerToTask16);
+}
+
+/* -------------------------------- */
+/* Задание №17
+/* -------------------------------- */
+// task17();
+
+function task17(){
+  let result = alert(1) && alert(2);
+  let answerToTask17 = 'Возвращенным значением будет undefined, т.к. alert() после нажатия на кнопку \"Ok\" возвращает undefined.';
+
+  logTaskResults('Задание №17', false, `Возвращенное значение: ${result}`, answerToTask17);
+}
+
+/* -------------------------------- */
+/* Задание №18
+/* -------------------------------- */
+// task18();
+
+function task18(){
+  let result = null || 2 && 3 || 4;
+  let answerToTask18 = 'Возвращенным значением будет число 3. У оператора И больший приоритет, поэтому он выполнится первым и вернет число 3, т.к. возвращает либо первый false, либо последний true. Затем слева на право выполнится оператор ИЛИ и вернет число 3, т.к. ИЛИ возвращает либо первый true, либо последний false.';
+
+  logTaskResults('Задание №18', false, `Возвращенное значение: ${result}`, answerToTask18);
+}
+
+/* -------------------------------- */
+/* Задание №19
+/* -------------------------------- */
+task19();
+
+function task19(){
+
+
+  
+}
 
 /* -------------------------------- */
 /* TOOLS
