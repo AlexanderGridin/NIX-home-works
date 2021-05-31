@@ -316,7 +316,7 @@ function task16(){
 function task17(){
   console.clear();
 
-  let tasktitle = 'Задание №17';
+  let taskTitle = 'Задание №17';
   let result = alert(1) && alert(2);
   let answerToTask17 = 'Возвращенным значением будет undefined, т.к. alert() после нажатия на кнопку \"Ok\" возвращает undefined.';
 
