@@ -1,3 +1,9 @@
+:root
+{
+  font-size: 1em;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
 .custom-list
 {
   padding: 0;
@@ -22,4 +28,31 @@
   margin: 0;
   margin-bottom: 15px;
   line-height: 1.3;
+}
+
+.custom-list button
+{
+  background: #24ADF3;
+  border: 2px solid #24ADF3;
+  color: #FFF;
+  padding: 10px;
+  transition: 0.4s;
+}
+
+.custom-list button:hover
+{
+  cursor: pointer;
+  background: #FFF;
+  color: #000;
+}
+
+.custom-list button.visited
+{
+  background: #149F5B;
+  border: 2px solid #149F5B;
+}
+
+.custom-list button.visited:hover
+{
+  background: #FFF;
 }

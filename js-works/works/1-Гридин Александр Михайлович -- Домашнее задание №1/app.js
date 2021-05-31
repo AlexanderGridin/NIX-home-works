@@ -1084,6 +1084,24 @@ function task40(taskCase){
 }
 
 /* -------------------------------- */
+/* MAIN
+/* -------------------------------- */
+initTaskPage();
+
+function initTaskPage(){
+  let buttons = document.querySelectorAll('.custom-list button');
+  buttons = Array.from(buttons);
+
+  buttons.forEach(function(button){
+    button.addEventListener('click', function(e){
+      if(!this.classList.contains('visited')){
+        this.classList.add('visited');
+      }
+    });
+  });
+}
+
+/* -------------------------------- */
 /* TOOLS
 /* -------------------------------- */
 function logTaskResults(taskTitle, separation = false, ...results){
