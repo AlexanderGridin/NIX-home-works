@@ -1,56 +1,54 @@
 /* -------------------------------- */
 /* Задание №1
 /* -------------------------------- */
-// task1();
-
 function task1(){
   console.clear();
 
+  let taskTitle = 'Задание №1';
   let admin;
   let name;
 
   name = 'Александр';
   admin = name;
 
-  logTaskResults('Задание №1', false, admin);
+  logTaskResults(taskTitle, false, admin);
 }
 
 /* -------------------------------- */
 /* Задание №2
 /* -------------------------------- */
-// task2();
-
 function task2(){
   console.clear();
 
+  let taskTitle = 'Задание №2';
   let answerToTask2 = 'Буквы в верхнем регистре используются для имён констант, которые "жёстко закодированы" (когда их значение известно до начала выполнения скрипта и записывается непосредственно в код). В отличие от константы BIRTHDAY, константа age является "менее константной", т.к. её значение вычисляется. В связи с этим, её имя должно писаться в нижнем регистре.)';
-  logTaskResults('Задание №2', false, answerToTask2);
+
+  logTaskResults(taskTitle, false, answerToTask2);
 }
 
 /* -------------------------------- */
 /* Задание №3
 /* -------------------------------- */
-// task3();
-
 function task3(){
   console.clear();
   
+  let taskTitle = 'Задание №3';
   let name = 'Alexander';
 
   let case1 = `hello ${1}`;
   let case2 = `hello ${'name'}`;
   let case3 = `hello ${name}`;
 
-  logTaskResults('Задание №3', false, case1, case2, case3);
+  logTaskResults(taskTitle, false, case1, case2, case3);
 }
 
 /* -------------------------------- */
 /* Задание №4
 /* -------------------------------- */
-// task4();
-
 function task4(){
   console.clear();
+
+  let taskTitle = 'Задание №4';
   
   let case1 = '' + 1 + 0;
   let case2 = '' - 1 + 0;
@@ -67,48 +65,45 @@ function task4(){
   let case13 = null + 1;
   let case14 = undefined + 1;
 
-  logTaskResults('Задание №4', false, case1, case2, case3, case4, case5, case6, case7, case8, case9, case10, case11, case12, case13, case14);
+  logTaskResults(taskTitle, false, case1, case2, case3, case4, case5, case6, case7, case8, case9, case10, case11, case12, case13, case14);
 }
 
 /* -------------------------------- */
 /* Задание №5
 /* -------------------------------- */
-// task5();
-
 function task5(){
   console.clear();
 
+  let taskTitle = 'Задание №5';
   let a = 1;
   let b = 1;
 
   let c = ++a;
   let d = b++;
 
-  logTaskResults('Задание №5', false, `Результат работы префиксной формы: ${c}`, `Результат работы постфиксной формы: ${d}`);
+  logTaskResults(taskTitle, false, `Результат работы префиксной формы: ${c}`, `Результат работы постфиксной формы: ${d}`);
 }
 
 /* -------------------------------- */
 /* Задание №6
 /* -------------------------------- */
-// task6();
-
 function task6(){
   console.clear();
 
+  let taskTitle = 'Задание №6';
   let a = 2;
-
   let x = 1 + (a *= 2);
 
-  logTaskResults('Задание №6', false, `a = ${a}`, `x = ${x}`);
+  logTaskResults(taskTitle, false, `a = ${a}`, `x = ${x}`);
 }
 
 /* -------------------------------- */
 /* Задание №7
 /* -------------------------------- */
-// task7();
-
 function task7(){
   console.clear();
+
+  let taskTitle = 'Задание №7';
 
   let case1 = 5 > 4;
   let case2 = 'ананас' > 'яблоко';
@@ -118,37 +113,36 @@ function task7(){
   let case6 = null == '\n0\n';
   let case7 = null === +'\n0\n';
 
-  logTaskResults('Задание №7', true, case1, case2, case3, case4, case5, case6, case7);
+  logTaskResults(taskTitle, true, case1, case2, case3, case4, case5, case6, case7);
 }
 
 /* -------------------------------- */
 /* Задание №8
 /* -------------------------------- */
-// task8();
-
 function task8(){
   console.clear();
 
+  let taskTitle = 'Задание №8';
   let userName = prompt('Введите Ваше имя (результат отобразится в консоли)', '');
 
   if(!userName){
-    logTaskResults('Задание №8', false, `Вы не ввели имя`);
+    logTaskResults(taskTitle, false, `Вы не ввели имя`);
 
     return;
   }
 
   userName = userName.trim();
-  logTaskResults('Задание №8', false, `Ваше имя: ${userName}`);
+  logTaskResults(taskTitle, false, `Ваше имя: ${userName}`);
 }
 
 /* -------------------------------- */
 /* Задание №9
 /* -------------------------------- */
-// task9();
-
 function task9(){
   console.clear();
 
+  let taskTitle = 'Задание №9';
+  
   /*
   if('0'){
     alert('Привет');
@@ -157,22 +151,21 @@ function task9(){
 
   let answerToTask9 = 'alert выведется, т.к. строка \"0\" не является пустой, и при приведении к типу Boolean вернет true.';
 
-  logTaskResults('Задание №9', false, answerToTask9);
+  logTaskResults(taskTitle, false, answerToTask9);
 }
 
 /* -------------------------------- */
 /* Задание №10
 /* -------------------------------- */
-// task10();
-
 function task10(){
   console.clear();
 
+  let taskTitle = 'Задание №10';
   let officialJavscriptName = prompt('Каково \"официальное\" название JavaScript? (результат будет выведен в консоль)', '');
   let result  = '';
 
   if(officialJavscriptName === null){
-    logTaskResults('Задание №10', false, 'Вы отменили ввод текста');
+    logTaskResults(taskTitle, false, 'Вы отменили ввод текста');
     return;
   }
 
@@ -189,21 +182,20 @@ function task10(){
     result = 'Не знаете? ECMAScript!';
   }
 
-  logTaskResults('Задание №10', false, result);
+  logTaskResults(taskTitle, false, result);
 }
 
 /* -------------------------------- */
 /* Задание №11
 /* -------------------------------- */
-// task11();
-
 function task11(){
   console.clear();
 
+  let taskTitle = 'Задание №11';
   let userNumber = prompt('Введите число', '');
 
   if(userNumber === null){
-    logTaskResults('Задание №11', false, 'Вы отменили ввод текста');
+    logTaskResults(taskTitle, false, 'Вы отменили ввод текста');
     return;
   }
 
@@ -220,28 +212,27 @@ function task11(){
   }
 
   if(userNumber == 0){
-    logTaskResults('Задание №11', false, 0);
+    logTaskResults(taskTitle, false, 0);
   } else if(userNumber > 0){
-    logTaskResults('Задание №11', false, 1);
+    logTaskResults(taskTitle, false, 1);
   } else {
-    logTaskResults('Задание №11', false, -1);
+    logTaskResults(taskTitle, false, -1);
   }
 }
 
 /* -------------------------------- */
 /* Задание №12
 /* -------------------------------- */
-// task12();
-
 function task12(){
   console.clear()
 
+  let taskTitle = 'Задание №12';
   let numbers = prompt('Введите 2 числа, разделенных пробелом, чтобы узнать, их сумма больше нашего загаднного числа, или меньше?', '');
 
   if(numbers){
     numbers = numbers.trim().split(' ');
   } else {
-    logTaskResults('Задание №12', false, 'Что-то пошло не так при вводе чисел...');
+    logTaskResults(taskTitle, false, 'Что-то пошло не так при вводе чисел...');
     return;
   }
 
@@ -253,20 +244,19 @@ function task12(){
   if(!Number.isNaN(a) && !Number.isNaN(b)){
     let result = (a + b < 4) ? 'Мало' : 'Много';
 
-    logTaskResults('Задание №12', false, result);
+    logTaskResults(taskTitle, false, result);
   } else {
-    logTaskResults('Задание №12', false, 'Извините, но данный пример работает только с числами');
+    logTaskResults(taskTitle, false, 'Извините, но данный пример работает только с числами');
   }
 }
 
 /* -------------------------------- */
 /* Задание № 13
 /* -------------------------------- */
-// task13();
-
 function task13(){
   console.clear();
 
+  let taskTitle = 'Задание №13';
   let message;
   let login = prompt('Введите логин (Доступные логины - "Директор", "Сотрудник")', '');
 
@@ -278,91 +268,85 @@ function task13(){
             login === 'Директор'? 'Здравствуйте!':
             login === '' ? 'Нет логина' : '';
 
-  logTaskResults('Задание №13', false, message);
+  logTaskResults(taskTitle, false, message);
 }
 
 /* -------------------------------- */
 /* Задание №14
 /* -------------------------------- */
-// task14();
-
 function task14(){
   console.clear();
 
+  let taskTitle = 'Задание №14';
   let result = null || 2 || undefined;
   let answerToTask14 = 'Возвращенным значением будет число 2, т.к. ИЛИ возвращает либо первый true, либо последний false.';
 
-  logTaskResults('Задание №14', false, `Возвращенное значение: ${result}`, answerToTask14);
+  logTaskResults(taskTitle, false, `Возвращенное значение: ${result}`, answerToTask14);
 }
 
 /* -------------------------------- */
 /* Задание №15
 /* -------------------------------- */
-// task15();
-
 function task15(){
   console.clear();
 
+  let taskTitle = 'Задание №15';
   let result = alert(1) || 2 || alert(3);
   let answerToTask15 = 'Возвращенным значением будет число 2, т.к. alert() после нажатия на кнопку \"Ok\" возвращает undefined.';
 
-  logTaskResults('Задание №15', false, `Возвращенное значение: ${result}`, answerToTask15);
+  logTaskResults(taskTitle, false, `Возвращенное значение: ${result}`, answerToTask15);
 }
 
 /* -------------------------------- */
 /* Задание №16
 /* -------------------------------- */
-// task16();
-
 function task16(){
   console.clear();
 
+  let taskTitle = 'Задание №16';
   let result = 1 && null && 2;
   let answerToTask16 = 'Возвращенным значением будет null, т.к. И возвращает либо первый false, либо последний true.';
 
-  logTaskResults('Задание №16', false, `Возвращенное значение: ${result}`, answerToTask16);
+  logTaskResults(taskTitle, false, `Возвращенное значение: ${result}`, answerToTask16);
 }
 
 /* -------------------------------- */
 /* Задание №17
 /* -------------------------------- */
-// task17();
-
 function task17(){
   console.clear();
 
+  let tasktitle = 'Задание №17';
   let result = alert(1) && alert(2);
   let answerToTask17 = 'Возвращенным значением будет undefined, т.к. alert() после нажатия на кнопку \"Ok\" возвращает undefined.';
 
-  logTaskResults('Задание №17', false, `Возвращенное значение: ${result}`, answerToTask17);
+  logTaskResults(taskTitle, false, `Возвращенное значение: ${result}`, answerToTask17);
 }
 
 /* -------------------------------- */
 /* Задание №18
 /* -------------------------------- */
-// task18();
-
 function task18(){
   console.clear();
 
+  let taskTitle = 'Задание №18';
   let result = null || 2 && 3 || 4;
   let answerToTask18 = 'Возвращенным значением будет число 3. У оператора И больший приоритет, поэтому он выполнится первым и вернет число 3, т.к. возвращает либо первый false, либо последний true. Затем слева на право выполнится оператор ИЛИ и вернет число 3, т.к. ИЛИ возвращает либо первый true, либо последний false.';
 
-  logTaskResults('Задание №18', false, `Возвращенное значение: ${result}`, answerToTask18);
+  logTaskResults(taskTitle, false, `Возвращенное значение: ${result}`, answerToTask18);
 }
 
 /* -------------------------------- */
 /* Задание №19
 /* -------------------------------- */
-// task19();
-
 function task19(){
   console.clear();
 
+  let taskTitle = 'Задание №19';
   let age = +prompt('Введите Ваш возраст', '');
 
   if(Number.isNaN(age) || !age){
-    logTaskResults('Задание №19', false, 'Извините, но так уж сложилось, что возраст должен быть числом');
+    logTaskResults(taskTitle, false, 'Извините, но так уж сложилось, что возраст должен быть числом');
     return;
   }
 
@@ -371,19 +355,17 @@ function task19(){
   let errorMessage = 'Возраст не может быть отрицательным числом!';
   
   if(age >= 14 && age <= 90){
-    logTaskResults('Задание №19', false, successMessage);
+    logTaskResults(taskTitle, false, successMessage);
   } else if(age < 0){
-    logTaskResults('Задание №19', false, errorMessage);
+    logTaskResults(taskTitle, false, errorMessage);
   } else {
-    logTaskResults('Задание №19', false, failureMessage);
+    logTaskResults(taskTitle, false, failureMessage);
   }
 }
 
 /* -------------------------------- */
 /* Задание №20
 /* -------------------------------- */
-// task20();
-
 function task20(subtaskNumber){
   console.clear();
 
@@ -423,13 +405,10 @@ function task20(subtaskNumber){
 /* -------------------------------- */
 /* Задание №21
 /* -------------------------------- */
-// task21();
-
 function task21(){
   console.clear();
 
   let taskTitle = 'Задание №21';
-
   let answerToTask21 = 'Выведутся все, кроме значения \"second\". Число, независимо от того, положительное оно, или отрицательное, при преобразовании в Boolean возвращает true, если оно не равно нулю. \"third\" выводится, т.к. сначала вычисляется оператор && (его приоритет больше, чем ||), который возвращает true, затем вычисляется оператор ||.';
 
   let case1 = 'Ничего не вывелось';
@@ -454,8 +433,6 @@ function task21(){
 /* -------------------------------- */
 /* Задание №22
 /* -------------------------------- */
-// task22();
-
 function task22(){
   console.clear();
 
@@ -492,8 +469,6 @@ function task22(){
 /* -------------------------------- */
 /* Задание №23
 /* -------------------------------- */
-// task23();
-
 function task23(){
   console.clear();
 
@@ -524,8 +499,6 @@ function task23(){
 /* -------------------------------- */
 /* Задание №24
 /* -------------------------------- */
-// task24();
-
 function task24(){
   console.clear();
 
@@ -554,8 +527,6 @@ function task24(){
 /* -------------------------------- */
 /* Задание №25
 /* -------------------------------- */
-// task25();
-
 function task25(){
   console.clear();
 
@@ -578,8 +549,6 @@ function task25(){
 /* -------------------------------- */
 /* Задание №26
 /* -------------------------------- */
-// task26();
-
 function task26(){
   console.clear();
 
@@ -603,8 +572,6 @@ function task26(){
 /* -------------------------------- */
 /* Задание №27
 /* -------------------------------- */
-// task27();
-
 function task27(){
   console.clear();
 
@@ -630,8 +597,6 @@ function task27(){
 /* -------------------------------- */
 /* Задание №28
 /* -------------------------------- */
-// task28();
-
 function task28(){
   console.clear();
 
@@ -663,8 +628,6 @@ function task28(){
 /* -------------------------------- */
 /* Задание №29
 /* -------------------------------- */
-// task29();
-
 function task29(){
   console.clear();
 
@@ -709,8 +672,6 @@ function task29(){
 /* -------------------------------- */
 /* Задание №30
 /* -------------------------------- */
-// task30();
-
 function task30(){
   console.clear();
 
@@ -734,8 +695,6 @@ function task30(){
 /* -------------------------------- */
 /* Задание №31
 /* -------------------------------- */
-// task31();
-
 function task31(){
   console.clear();
 
@@ -759,8 +718,6 @@ function task31(){
 /* -------------------------------- */
 /* Задание №32
 /* -------------------------------- */
-// task32();
-
 function task32(){
   console.clear();
 
@@ -789,8 +746,6 @@ function task32(){
 /* -------------------------------- */
 /* Задание №33
 /* -------------------------------- */
-// task33();
-
 function task33(){
   console.clear();
 
@@ -814,8 +769,6 @@ function task33(){
 /* -------------------------------- */
 /* Задание №33 (Альтернативный вариант)
 /* -------------------------------- */
-// task33alternate();
-
 function task33alternate(){
   console.clear();
 
@@ -835,8 +788,6 @@ function task33alternate(){
 /* -------------------------------- */
 /* Задание №34
 /* -------------------------------- */
-// task34();
-
 function task34(taskCase){
   console.clear();
 
@@ -877,8 +828,6 @@ function task34(taskCase){
 /* -------------------------------- */
 /* Задание №35
 /* -------------------------------- */
-// task35();
-
 function task35(taskCase){
   console.clear();
 
@@ -917,8 +866,6 @@ function task35(taskCase){
 /* -------------------------------- */
 /* Задание №36
 /* -------------------------------- */
-// task36();
-
 function task36(){
   console.clear();
 
@@ -950,8 +897,6 @@ function task36(){
 /* -------------------------------- */
 /* Задание №37
 /* -------------------------------- */
-// task37();
-
 function task37(){
   console.clear();
 
@@ -997,8 +942,6 @@ function task37(){
 /* -------------------------------- */
 /* Задание №38
 /* -------------------------------- */
-// task38();
-
 function task38(){
   console.clear();
 
@@ -1044,8 +987,6 @@ function task38(){
 /* -------------------------------- */
 /* Задание №39
 /* -------------------------------- */
-// task39();
-
 function task39(){
   console.clear();
 
@@ -1093,8 +1034,6 @@ function task39(){
 /* -------------------------------- */
 /* Задание №40
 /* -------------------------------- */
-// task40();
-
 function task40(taskCase){
   console.clear();
 
