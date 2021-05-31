@@ -297,12 +297,197 @@ function task18(){
 /* -------------------------------- */
 /* Задание №19
 /* -------------------------------- */
-task19();
+// task19();
 
 function task19(){
+  let age = 14;
 
-
+  let successMessage = 'Вам от 14 до 90 лет';
+  let failureMessage = 'Вам либо меньше 14, либо больше 90 лет';
+  let errorMessage = 'Возраст не может быть отрицательным числом!';
   
+  if(age >= 14 && age <= 90){
+    logTaskResults('Задание №19', false, successMessage);
+  } else if(age < 0){
+    logTaskResults('Задание №19', false, errorMessage);
+  } else {
+    logTaskResults('Задание №19', false, failureMessage);
+  }
+}
+
+/* -------------------------------- */
+/* Задание №20
+/* -------------------------------- */
+task20();
+
+function task20(){
+  let taskTitle = 'Задание №20';
+  let age = 16;
+
+  let successMessage = 'Вам либо 14 лет и меньше, либо 90 лет и больше';
+  let failureMessage = 'Вам от 15 до 89 лет';
+  let errorMessage = 'Возраст не может быть отрицательным числом!';
+
+  // task20_1();
+  // task20_2();
+
+  function task20_1(){
+    if(!(age > 14) || !(age < 90)){
+      logTaskResults(taskTitle, false, successMessage);
+    } else if(age < 0){
+      logTaskResults(taskTitle, false, errorMessage);
+    } else {
+      logTaskResults(taskTitle, false, failureMessage);
+    }
+  }
+
+  function task20_2(){
+    if(age <= 14 || age >= 90 ){
+      logTaskResults(taskTitle, false, successMessage);
+    } else if(age < 0){
+      logTaskResults(taskTitle, false, errorMessage);
+    } else {
+      logTaskResults(taskTitle, false, failureMessage);
+    }
+  }
+}
+
+/* -------------------------------- */
+/* Задание №21
+/* -------------------------------- */
+// task21();
+
+function task21(){
+  let taskTitle = 'Задание №21';
+
+  let answerToTask21 = 'Выведутся все, кроме значения \"second\". Число, независимо от того, положительное оно, или отрицательное, при преобразовании в Boolean возвращает true, если оно не равно нулю. \"third\" выводится, т.к. сначала вычисляется оператор && (его приоритет больше, чем ||), который возвращает true, затем вычисляется оператор ||.';
+
+  let case1 = 'Ничего не вывелось';
+  let case2 = 'Ничего не вывелось';
+  let case3 = 'Ничего не вывелось';
+
+  if(-1 || 0){
+    case1 = 'first';
+  }
+
+  if(-1 && 0){
+    case2 = 'second';
+  }
+
+  if(null || -1 && 1){
+    case3 = 'third';
+  }
+
+  logTaskResults(taskTitle, false, answerToTask21, case1, case2, case3);
+}
+
+/* -------------------------------- */
+/* Задание №22
+/* -------------------------------- */
+// task22();
+
+function task22(){
+  let taskTitle = 'Задание №22';
+
+  let userLogin = prompt('Введите логин', '');
+
+  if(userLogin === null || userLogin === ''){
+    logTaskResults(taskTitle, false, 'Ввод логина отменен.');
+    return;
+  }
+
+  userLogin = userLogin.trim();
+
+  if(userLogin === 'Админ'){
+    let password = prompt('Введите пароль', '');
+
+    if(password === null || password === ''){
+      logTaskResults(taskTitle, false, 'Ввод пароля отменен.');
+      return;
+    }
+
+    password = password.trim();
+
+    if(password === 'Я главный'){
+      logTaskResults(taskTitle, false, 'Здравствуйте!');
+    } else {
+      logTaskResults(taskTitle, false, 'Неверный пароль');
+    }
+  } else {
+    logTaskResults(taskTitle, false, 'Я Вас не знаю...');
+  }
+}
+
+/* -------------------------------- */
+/* Задание №23
+/* -------------------------------- */
+// task23();
+
+function task23(){
+  let taskTitle = 'Задание №23';
+
+  let browser = 'Brave';
+
+  if(browser === 'Edge'){
+    logTaskResults(taskTitle, false, 'You\'ve got the Edge!');
+  } else if(
+    browser === 'Chrome' ||
+    browser === 'Firefox' ||
+    browser === 'Safari' ||
+    browser === 'Opera'
+  ){
+    logTaskResults(taskTitle, false, 'Okay we support these browsers too');
+  } else {
+    logTaskResults(taskTitle, false, 'We hope that this page looks ok');
+  }
+}
+
+/* -------------------------------- */
+/* Задание №24
+/* -------------------------------- */
+// task24();
+
+function task24(){
+  let taskTitle = 'Задание №24';
+  let a = +prompt('a?', '');
+
+  switch(a){
+    case 0:
+      logTaskResults(taskTitle, false, 0);
+      break;
+
+    case 1:
+      logTaskResults(taskTitle, false, 1);
+      break;
+
+    case 2:
+    case 3:
+      logTaskResults(taskTitle, false, '2, 3');
+      break;
+
+    default:
+      logTaskResults(taskTitle, false, 'Some other numbers');
+
+  }
+}
+
+/* -------------------------------- */
+/* Задание №25
+/* -------------------------------- */
+// task25();
+
+function task25(){
+  let taskTitle = 'Задание №25';
+
+  let number = 5;
+
+  if(number > 0){
+    number++;
+
+    logTaskResults(taskTitle, false, number);
+  } else {
+    logTaskResults(taskTitle, false, number);
+  }
 }
 
 /* -------------------------------- */
