@@ -5,41 +5,140 @@ function task1(){
   console.clear();
 
   let taskTitle = 'Задание №1';
-  let admin;
-  let name;
+  let i = 3;
+  let comment = 'Последним значением alert(i--) будет 1, т.к. i декрементируется с помощью постфиксной формы записи оператора декремента, которая возвращает значение переменной до её изменения.';
 
-  name = 'Александр';
-  admin = name;
+  while(i){
+    alert(i--);
+  }
 
-  logTaskResults(taskTitle, false, admin);
+  logTaskResults(taskTitle, false, comment);
 }
 
 /* -------------------------------- */
 /* Задание №2
 /* -------------------------------- */
-function task2(){
+function task2(taskCase = 1){
   console.clear();
 
   let taskTitle = 'Задание №2';
-  let answerToTask2 = 'Буквы в верхнем регистре используются для имён констант, которые "жёстко закодированы" (когда их значение известно до начала выполнения скрипта и записывается непосредственно в код). В отличие от константы BIRTHDAY, константа age является "менее константной", т.к. её значение вычисляется. В связи с этим, её имя должно писаться в нижнем регистре.)';
 
-  logTaskResults(taskTitle, false, answerToTask2);
+  let minOfRange = -10;
+  let maxOfRange = 10;
+  let numbers = {};
+
+  let initMessage;
+  let resultMessage;
+  let numbersStatus;
+
+  switch(taskCase){
+    case 1:
+      numbers.a = getRandomNumber(minOfRange, maxOfRange);
+      numbers.b = getRandomNumber(minOfRange, maxOfRange);
+      numbers.c = getRandomNumber(minOfRange, maxOfRange);
+      break;
+
+    case 2:
+      numbers.a = 1;
+      numbers.b = 2;
+      numbers.c = 3;
+      break;
+  }
+  
+  initMessage = `Сгенерированные числа: A: ${numbers.a}; B: ${numbers.b}; C: ${numbers.c}`;
+
+  if(
+    numbers.a < numbers.b && 
+    numbers.a < numbers.c && 
+    numbers.b < numbers.c
+  ){
+    numbersStatus = 'Числа упорядочены по возрастанию. Их значения будут удвоены.';
+
+    for(let prop in numbers){
+      numbers[prop] *= 2;
+    }
+  } else {
+    numbersStatus = 'Числа не упорядочены по возрастанию. Их значения будут заменены на противоположные.';
+
+    for(let prop in numbers){
+      numbers[prop] = -numbers[prop];
+    }
+  }
+
+  resultMessage = `Значения после обработки: A: ${numbers.a}; B: ${numbers.b}; C: ${numbers.c}`;
+
+  logTaskResults(taskTitle, false, initMessage, numbersStatus, resultMessage);
 }
 
 /* -------------------------------- */
 /* Задание №3
 /* -------------------------------- */
-function task3(){
+function task3(taskCase = 1){
   console.clear();
   
   let taskTitle = 'Задание №3';
-  let name = 'Alexander';
 
-  let case1 = `hello ${1}`;
-  let case2 = `hello ${'name'}`;
-  let case3 = `hello ${name}`;
+  let minOfRange = -10;
+  let maxOfRange = 10;
+  let numbers = {};
 
-  logTaskResults(taskTitle, false, case1, case2, case3);
+  let initMessage;
+  let resultMessage;
+  let numbersStatus;
+
+  switch(taskCase){
+    case 1:
+      numbers.a = getRandomNumber(minOfRange, maxOfRange);
+      numbers.b = getRandomNumber(minOfRange, maxOfRange);
+      numbers.c = getRandomNumber(minOfRange, maxOfRange);
+      break;
+
+    case 2:
+      numbers.a = 1;
+      numbers.b = 2;
+      numbers.c = 3;
+      break;
+
+    case 3:
+      numbers.a = 3;
+      numbers.b = 2;
+      numbers.c = 1;
+      break;
+  }
+
+  initMessage = `Сгенерированные числа: A: ${numbers.a}; B: ${numbers.b}; C: ${numbers.c}`;
+
+  if(
+    numbers.a < numbers.b && 
+    numbers.a < numbers.c && 
+    numbers.b < numbers.c
+  ){
+    numbersStatus = 'Числа упорядочены по возрастанию. Их значения будут удвоены.';
+
+    for(let prop in numbers){
+      numbers[prop] *= 2;
+    }
+  } else if(
+    numbers.a > numbers.b && 
+    numbers.a > numbers.c && 
+    numbers.b > numbers.c
+  ){
+    numbersStatus = 'Числа упорядочены по убыванию. Их значения будут удвоены.';
+
+    for(let prop in numbers){
+      numbers[prop] *= 2;
+    }
+  } else {
+    numbersStatus = 'Числа не упорядочены ни по возрастанию, ни по убыванию. Их значения будут заменены на противоположные.';
+
+    for(let prop in numbers){
+      numbers[prop] = -numbers[prop];
+    }
+  }
+  
+  resultMessage = `Значения после обработки: A: ${numbers.a}; B: ${numbers.b}; C: ${numbers.c}`;
+
+  logTaskResults(taskTitle, false, initMessage, numbersStatus, resultMessage);
 }
 
 /* -------------------------------- */
@@ -50,38 +149,80 @@ function task4(){
 
   let taskTitle = 'Задание №4';
   
-  let case1 = '' + 1 + 0;
-  let case2 = '' - 1 + 0;
-  let case3 = true + false;
-  let case4 = 6 / '3';
-  let case5 = '2' * '3';
-  let case6 = 4 + 5 + 'px';
-  let case7 = '$' + 4 + 5;
-  let case8 = '4' - 2;
-  let case9 = '4px' - 2;
-  let case10 = 7 / 0;
-  let case11 = '  -9  ' + 5;
-  let case12 = '  -9  ' - 5;
-  let case13 = null + 1;
-  let case14 = undefined + 1;
+  let minOfRange = -10;
+  let maxOfRange = 10;
+  let points = {
+    a: getRandomNumber(minOfRange, maxOfRange),
+    b: getRandomNumber(minOfRange, maxOfRange),
+    c: getRandomNumber(minOfRange, maxOfRange),
 
-  logTaskResults(taskTitle, false, case1, case2, case3, case4, case5, case6, case7, case8, case9, case10, case11, case12, case13, case14);
+    ab: 0,
+    ac: 0,
+  };
+
+  let initMessage = `Сгенерированные точки: A:${points.a}; B:${points.b}; C:${points.c}`;
+  let resultMessage;
+
+  points.ab = Math.abs(points.b - points.a);
+  points.ac = Math.abs(points.c - points.a);
+
+  if(points.ab < points.ac){
+    resultMessage = `Точка В:${points.b} является ближней к точке А. Расстояние от точки А составляет ${points.ab}`;
+  } else if(points.ab > points.ac){
+    resultMessage = `Точка C:${points.c} является ближней к точке А. Расстояние от точки А составляет ${points.ac}`;
+  } else {
+    resultMessage = `Точки B:${points.b} и C:${points.c} равноудалены от точки А. Расстояние от точки А составляет ${points.ab}`;
+  }
+
+  logTaskResults(taskTitle, false, initMessage, resultMessage);
 }
 
 /* -------------------------------- */
 /* Задание №5
 /* -------------------------------- */
-function task5(){
+function task5(taskCase = 1){
   console.clear();
 
   let taskTitle = 'Задание №5';
-  let a = 1;
-  let b = 1;
 
-  let c = ++a;
-  let d = b++;
+  let minOfRange = -10;
+  let maxOfRange = 10;
+  let point = {
+    x: 0,
+    y: 0,
+  };
 
-  logTaskResults(taskTitle, false, `Результат работы префиксной формы: ${c}`, `Результат работы постфиксной формы: ${d}`);
+  if(taskCase === 2){
+    point.x = getRandomNumber(minOfRange, maxOfRange);
+    point.y = getRandomNumber(minOfRange, maxOfRange);
+  }
+
+  let initMessage = `Координаты сгенерированной точки: x:${point.x}; y:${point.y}`;
+  let resultMessage;
+  
+  if(point.x === 0 && point.x === point.y){
+    resultMessage = `0: точка совпадает с началом координат.`;
+    logTaskResults(taskTitle, false, initMessage, resultMessage);
+
+    return;
+  }
+
+  if(point.y === 0){
+    resultMessage = `1: точка находится на оси ОХ.`;
+    logTaskResults(taskTitle, false, initMessage, resultMessage);
+
+    return;
+  }
+  
+  if(point.x === 0){
+    resultMessage = `2: точка находится на оси ОY.`;
+    logTaskResults(taskTitle, false, initMessage, resultMessage);
+
+    return;
+  }
+
+  resultMessage = `3: точка не лежит на координатных осях.`;
+  logTaskResults(taskTitle, false, initMessage, resultMessage);
 }
 
 /* -------------------------------- */
