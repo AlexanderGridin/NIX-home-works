@@ -232,29 +232,255 @@ function task6(){
   console.clear();
 
   let taskTitle = 'Задание №6';
-  let a = 2;
-  let x = 1 + (a *= 2);
 
-  logTaskResults(taskTitle, false, `a = ${a}`, `x = ${x}`);
+  let minOfRange = -10;
+  let maxOfRange = 10;
+  let point = {
+    x: getRandomNumber(minOfRange, maxOfRange),
+    y: getRandomNumber(minOfRange, maxOfRange),
+  };
+
+  if(point.x === 0 && point.x === point.y){
+    point.x = getRandomNumber(minOfRange, maxOfRange);
+    point.y = getRandomNumber(minOfRange, maxOfRange);
+  }
+
+  let initMessage = `Координаты сгенерированной точки: x:${point.x}; y:${point.y}`;
+  let resultMessage;
+
+  let coordinateQuarterOfPoint = getCoordinateQuarterOfPoint(point);
+
+  switch(coordinateQuarterOfPoint){
+    case 1:
+      resultMessage = 'Точка находится в 1-й координатной четверти';
+      logTaskResults(taskTitle, false, initMessage, resultMessage);
+
+      break;
+
+    case 2:
+      resultMessage = 'Точка находится во 2-й координатной четверти';
+      logTaskResults(taskTitle, false, initMessage, resultMessage);
+
+      break;
+
+    case 3:
+      resultMessage = 'Точка находится в 3-й координатной четверти';
+      logTaskResults(taskTitle, false, initMessage, resultMessage);
+
+      break;
+
+    case 4:
+      resultMessage = 'Точка находится в 4-й координатной четверти';
+      logTaskResults(taskTitle, false, initMessage, resultMessage);
+
+      break;
+
+    default:
+      resultMessage = 'Был очень маленький шанс, что это произойдет....но все таки точка совпадает с началом координат...';
+      logTaskResults(taskTitle, false, initMessage, resultMessage);
+  }
+
+  // Functions
+  function getCoordinateQuarterOfPoint(point){
+    if(point.x > 0 && point.y > 0){
+      return 1;
+    }
+
+    if(point.x < 0 && point.y > 0){
+      return 2;
+    }
+
+    if(point.x < 0 && point.y < 0){
+      return 3;
+    }
+
+    if(point.x > 0 && point.y < 0){
+      return 4;
+    }
+
+    return 0;
+  }
 }
 
 /* -------------------------------- */
 /* Задание №7
 /* -------------------------------- */
-function task7(){
+function task7(taskCase){
   console.clear();
 
   let taskTitle = 'Задание №7';
+  let square;
 
-  let case1 = 5 > 4;
-  let case2 = 'ананас' > 'яблоко';
-  let case3 = '2' > '12';
-  let case4 = undefined == null;
-  let case5 = undefined === null;
-  let case6 = null == '\n0\n';
-  let case7 = null === +'\n0\n';
+  switch(taskCase){
+    case 1:
+      square = {
+        topLeft: {
+          x: 1,
+          y: 3,
+        },
 
-  logTaskResults(taskTitle, true, case1, case2, case3, case4, case5, case6, case7);
+        topRight: {
+          x: 4,
+          y: 3,
+        },
+
+        bottomLeft: {
+          x: 1,
+          y: 1,
+        },
+
+        bottomRight: {
+          x: null,
+          y: null
+        }
+      };
+      break;
+
+    case 2:
+      square = {
+        topLeft: {
+          x: null,
+          y: null,
+        },
+
+        topRight: {
+          x: 2,
+          y: 7,
+        },
+
+        bottomLeft: {
+          x: -2,
+          y: 5,
+        },
+
+        bottomRight: {
+          x: 2,
+          y: 5
+        }
+      };
+      break;
+
+    case 3:
+      square = {
+        topLeft: {
+          x: -7,
+          y: 2,
+        },
+
+        topRight: {
+          x: -2,
+          y: 2,
+        },
+
+        bottomLeft: {
+          x: null,
+          y: null,
+        },
+
+        bottomRight: {
+          x: -2,
+          y: -2
+        }
+      };
+      break;
+
+    case 4:
+      square = {
+        topLeft: {
+          x: 0,
+          y: -2,
+        },
+
+        topRight: {
+          x: null,
+          y: null,
+        },
+
+        bottomLeft: {
+          x: 0,
+          y: -5,
+        },
+
+        bottomRight: {
+          x: 5,
+          y: -5,
+        }
+      };
+      break;
+  }
+
+  console.group(taskTitle);
+  console.log('Таблица координат исходного квадрата:');
+  console.table(square);
+
+  for(let pointName in square){
+    let squarePoint = square[pointName];
+
+    if(!isSetCoordinatesOfPoint(squarePoint)){
+      console.log(`Отсутствуют координаты вершины квадара: "${getReadableSquarePointName(pointName)}" (${pointName})`);
+
+      calcSquarePointCoordsByName(pointName, square);
+
+      console.log(`Координаты 4-й вершины: х:${squarePoint.x}; y:${squarePoint.y}`);
+      console.log('Таблица координат квадрата с найденными координатами 4-й вершины:');
+      console.table(square);
+    }
+  }
+
+  console.groupEnd();
+
+  // Functions
+  function getReadableSquarePointName(name){
+    let readableName;
+
+    switch(name){
+      case 'topLeft':
+        readableName = 'Верхняя левая вершина';
+        break;
+
+      case 'topRight':
+        readableName = 'Верхняя правая вершина';
+        break;
+
+      case 'bottomLeft':
+        readableName = 'Нижняя левая вершина';
+        break;
+
+      case 'bottomRight':
+        readableName = 'Нижняя правая вершина';
+        break;
+    }
+
+    return readableName;
+  }
+
+  function calcSquarePointCoordsByName(name, square){
+    switch(name){
+      case 'topLeft':
+        square.topLeft.x = square.bottomLeft.x;
+        square.topLeft.y = square.topRight.y;
+        break;
+
+      case 'topRight':
+        square.topRight.x = square.bottomRight.x;
+        square.topRight.y = square.topLeft.y;
+        break;
+
+      case 'bottomLeft':
+        square.bottomLeft.x = square.topLeft.x;
+        square.bottomLeft.y = square.bottomRight.y;
+        break;
+
+      case 'bottomRight':
+        square.bottomRight.x = square.topRight.x;
+        square.bottomRight.y = square.bottomLeft.y;
+        break;
+    }
+  }
+
+  function isSetCoordinatesOfPoint(point){
+    return (typeof point.x === 'number') && (typeof point.y === 'number') ? true : false;
+  }
 }
 
 /* -------------------------------- */
@@ -264,16 +490,31 @@ function task8(){
   console.clear();
 
   let taskTitle = 'Задание №8';
-  let userName = prompt('Введите Ваше имя (результат отобразится в консоли)', '');
+  let resultMessage;
+  
+  let yearNumber = +prompt('Введите номер года', '');
 
-  if(!userName){
-    logTaskResults(taskTitle, false, `Вы не ввели имя`);
-
-    return;
+  if(isLeapYear(yearNumber)){
+    resultMessage = `Год ${yearNumber} является високостным. Количество дней в году - 366.`;
+  } else {
+    resultMessage = `Год ${yearNumber} не является високостным. Количество дней в году - 365.`;
   }
 
-  userName = userName.trim();
-  logTaskResults(taskTitle, false, `Ваше имя: ${userName}`);
+  logTaskResults(taskTitle, false, resultMessage);
+
+  // Functions
+  function isLeapYear(yearNumber){
+    if(yearNumber % 4 === 0){
+      if(
+        yearNumber % 100 === 0 &&
+        yearNumber % 400 !== 0
+      ){
+        return false;
+      }
+
+      return true;
+    }
+  }
 }
 
 /* -------------------------------- */
@@ -283,16 +524,22 @@ function task9(){
   console.clear();
 
   let taskTitle = 'Задание №9';
-  
-  /*
-  if('0'){
-    alert('Привет');
+  let resultMessage = '';
+
+  let number = +prompt('Введите число', '');
+
+  if(number === 0){
+    resultMessage = 'Нулевое число';
+    logTaskResults(taskTitle, false, resultMessage);
+
+    return;
   }
-  */
+  
+  resultMessage += (number > 0) ? 'Положительное ' : 'Отрицательное ';
+  resultMessage += (number % 2 === 0) ? 'четное ' : 'нечетное ';
+  resultMessage += 'число';
 
-  let answerToTask9 = 'alert выведется, т.к. строка \"0\" не является пустой, и при приведении к типу Boolean вернет true.';
-
-  logTaskResults(taskTitle, false, answerToTask9);
+  logTaskResults(taskTitle, false, resultMessage);
 }
 
 /* -------------------------------- */
@@ -302,28 +549,40 @@ function task10(){
   console.clear();
 
   let taskTitle = 'Задание №10';
-  let officialJavscriptName = prompt('Каково \"официальное\" название JavaScript? (результат будет выведен в консоль)', '');
-  let result  = '';
+  let resultMessage = '';
 
-  if(officialJavscriptName === null){
-    logTaskResults(taskTitle, false, 'Вы отменили ввод текста');
+  let numberString = prompt('Введите число', '');
+  let number = +numberString;
+  numberString = String(Math.abs(number));
+
+  if(number === 0){
+    resultMessage = 'Нулевое число';
+    logTaskResults(taskTitle, false, resultMessage);
+
     return;
   }
 
-  if(officialJavscriptName === ''){
-    task10();
-    return;
-  }
-
-  officialJavscriptName = officialJavscriptName.trim().toLowerCase();
-
-  if(officialJavscriptName === 'ecmascript'){
-    result = 'Верно, ECMAScript!';
+  if(number % 2 === 0){
+    resultMessage += 'Четное ';
   } else {
-    result = 'Не знаете? ECMAScript!';
+    resultMessage += 'Нечетное ';
   }
 
-  logTaskResults(taskTitle, false, result);
+  if(numberString.length === 2){
+    resultMessage += 'двузначное ';
+  } else if(numberString.length === 3){
+    resultMessage += 'трехзначное ';
+  }
+
+  if(number > 0){
+    resultMessage += 'положительное ';
+  } else {
+    resultMessage += 'отрицательное ';
+  }
+
+  resultMessage += 'число';
+
+  logTaskResults(taskTitle, false, resultMessage);
 }
 
 /* -------------------------------- */
@@ -333,32 +592,29 @@ function task11(){
   console.clear();
 
   let taskTitle = 'Задание №11';
-  let userNumber = prompt('Введите число', '');
+  let resultMessage = '';
+  let numbersString = '';
 
-  if(userNumber === null){
-    logTaskResults(taskTitle, false, 'Вы отменили ввод текста');
-    return;
+  resultMessage += `Циклы выведут разные значения, т.к. префиксный и постфиксный инкременты работают по-разному: префиксный инкремент сразу возвращает инкрементированное значение, а постфиксный - нет. `;
+
+  let i = 0;
+
+  while(++i < 5){
+    numbersString += `${i} `;
   }
 
-  if(userNumber === ''){
-    task11();
-    return;
+  resultMessage += `Префиксная форма. Выведенные значения: ${numbersString}. `;
+
+  i = 0;
+  numbersString = '';
+
+  while(i++ < 5){
+    numbersString += `${i} `;
   }
 
-  userNumber = +userNumber.trim();
-
-  if(Number.isNaN(userNumber)){
-    task11();
-    return;
-  }
-
-  if(userNumber == 0){
-    logTaskResults(taskTitle, false, 0);
-  } else if(userNumber > 0){
-    logTaskResults(taskTitle, false, 1);
-  } else {
-    logTaskResults(taskTitle, false, -1);
-  }
+  resultMessage += `Постфиксная форма. Выведенные значения: ${numbersString}.`;
+  
+  logTaskResults(taskTitle, false, resultMessage);
 }
 
 /* -------------------------------- */

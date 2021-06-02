@@ -4,18 +4,28 @@
   font-family: 'Montserrat', Arial, sans-serif;
 }
 
+img
+{
+  max-width: 100%;
+  height: auto;
+}
+
 .custom-list
 {
   padding: 0;
   margin: 0;
   list-style: none;
-  
+}
+
+.custom-list > li + li
+{
+  margin-top: 10px;
 }
 
 .custom-list li
 {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #ddd;
   background-color: #eee;
 }
 
