@@ -31,7 +31,8 @@ img
 
 .custom-list li.completed
 {
-  opacity: .2;
+  /* opacity: .2; */
+  border: 1px solid #24ADF3;
 }
 
 .custom-list li:last-child
@@ -46,16 +47,22 @@ img
   line-height: 1.3;
 }
 
-.custom-list button
+.custom-list button,
+.custom-list .btn
 {
   background: #24ADF3;
   border: 2px solid #24ADF3;
   color: #FFF;
   padding: 10px;
   transition: 0.4s;
+  font-family: inherit;
+  font-size: 0.875rem;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.custom-list button:hover
+.custom-list button:hover,
+.custom-list .btn:hover
 {
   cursor: pointer;
   background: #FFF;
