@@ -624,27 +624,26 @@ function task12(){
   console.clear()
 
   let taskTitle = 'Задание №12';
-  let numbers = prompt('Введите 2 числа, разделенных пробелом, чтобы узнать, их сумма больше нашего загаднного числа, или меньше?', '');
+  let resultMessage = '';
+  let numbersString = '';
 
-  if(numbers){
-    numbers = numbers.trim().split(' ');
-  } else {
-    logTaskResults(taskTitle, false, 'Что-то пошло не так при вводе чисел...');
-    return;
+  resultMessage += `Циклы выведут одинаковые значения, т.к. цикл for сначала проверяет условие, затем выполняет тело цикла, затем изменяет счетчик. `;
+
+  for(let i = 0; i < 5; i++){
+    numbersString += `${i} `;
   }
 
-  let[a, b] = numbers;
+  resultMessage += `Постфиксная форма. Выведенные значения: ${numbersString}. `;
 
-  a = +a;
-  b = +b;
+  numbersString = '';
 
-  if(!Number.isNaN(a) && !Number.isNaN(b)){
-    let result = (a + b < 4) ? 'Мало' : 'Много';
-
-    logTaskResults(taskTitle, false, result);
-  } else {
-    logTaskResults(taskTitle, false, 'Извините, но данный пример работает только с числами');
+  for(let i = 0; i < 5; ++i){
+    numbersString += `${i} `;
   }
+
+  resultMessage += `Префиксная форма. Выведенные значения: ${numbersString}.`;
+  
+  logTaskResults(taskTitle, false, resultMessage);
 }
 
 /* -------------------------------- */
@@ -654,18 +653,17 @@ function task13(){
   console.clear();
 
   let taskTitle = 'Задание №13';
-  let message;
-  let login = prompt('Введите логин (Доступные логины - "Директор", "Сотрудник")', '');
+  let resultMessage;
+  let evenNumbersString = '';
 
-  if(login){
-    login = login.trim();
+  for(let i = 2; i <= 10; i++){
+    if(i % 2 === 0){
+      evenNumbersString += `${i} `;
+    }
   }
 
-  message = login === 'Сотрудник' ? 'Привет!':
-            login === 'Директор'? 'Здравствуйте!':
-            login === '' ? 'Нет логина' : '';
-
-  logTaskResults(taskTitle, false, message);
+  resultMessage = `Четные числа: ${evenNumbersString}`;
+  logTaskResults(taskTitle, false, resultMessage);
 }
 
 /* -------------------------------- */
@@ -675,10 +673,21 @@ function task14(){
   console.clear();
 
   let taskTitle = 'Задание №14';
-  let result = null || 2 || undefined;
-  let answerToTask14 = 'Возвращенным значением будет число 2, т.к. ИЛИ возвращает либо первый true, либо последний false.';
+  let initMessage = 'Результат работы цикла for: ';
+  let resultMessage = 'Результат работы цикла while: ';
 
-  logTaskResults(taskTitle, false, `Возвращенное значение: ${result}`, answerToTask14);
+  for(let i = 0; i < 3; i++){
+    initMessage += `number ${i}! `;
+  }
+
+  let i = 0;
+
+  while(i < 3){
+    resultMessage += `number ${i}! `;
+    i++;
+  }
+
+  logTaskResults(taskTitle, false, initMessage, resultMessage);
 }
 
 /* -------------------------------- */
@@ -688,10 +697,22 @@ function task15(){
   console.clear();
 
   let taskTitle = 'Задание №15';
-  let result = alert(1) || 2 || alert(3);
-  let answerToTask15 = 'Возвращенным значением будет число 2, т.к. alert() после нажатия на кнопку \"Ok\" возвращает undefined.';
+  
+  let number = 0;
+  let userInput;
 
-  logTaskResults(taskTitle, false, `Возвращенное значение: ${result}`, answerToTask15);
+  while(number <= 100 && userInput !== null){
+    userInput = prompt('Введите число больше 100', '');
+    number = +userInput;
+  }
+
+  if(userInput === null){
+    logTaskResults(taskTitle, false, `Вы отменили ввод числа.`);
+  }
+
+  if(number > 100){
+    logTaskResults(taskTitle, false, `Ваше число: ${number} и оно больше 100.`);
+  }
 }
 
 /* -------------------------------- */
@@ -701,10 +722,35 @@ function task16(){
   console.clear();
 
   let taskTitle = 'Задание №16';
-  let result = 1 && null && 2;
-  let answerToTask16 = 'Возвращенным значением будет null, т.к. И возвращает либо первый false, либо последний true.';
+  
+  let primeNumbers = getPrimeNumbers(10);
 
-  logTaskResults(taskTitle, false, `Возвращенное значение: ${result}`, answerToTask16);
+  logTaskResults(taskTitle, false, `Простые числа: ${primeNumbers}`);
+
+  // Functions
+  function getPrimeNumbers(maxOfRange){
+    let primeNumbers = '';
+
+    for(let i = 2; i <= maxOfRange; i++){
+      let zeroRemainderDivisionsCounter = 0;
+
+      for(let j = 2; j <= maxOfRange; j++){
+        if(j === i){
+          continue;
+        }
+
+        if(i % j === 0){
+          zeroRemainderDivisionsCounter++;
+        }
+      }
+
+      if(zeroRemainderDivisionsCounter === 0){
+        primeNumbers += `${i} `;
+      }
+    }
+
+    return primeNumbers;
+  }
 }
 
 /* -------------------------------- */
@@ -714,10 +760,14 @@ function task17(){
   console.clear();
 
   let taskTitle = 'Задание №17';
-  let result = alert(1) && alert(2);
-  let answerToTask17 = 'Возвращенным значением будет undefined, т.к. alert() после нажатия на кнопку \"Ok\" возвращает undefined.';
 
-  logTaskResults(taskTitle, false, `Возвращенное значение: ${result}`, answerToTask17);
+  let num1 = +prompt('Введите первое число', '');
+  let num2 = +prompt('Введите второе число', '');
+
+  let average = (num1 + num2) / 2;
+  
+
+  logTaskResults(taskTitle, false, `Среднее арифметическое чисел ${num1} и ${num2} равно ${average}`);
 }
 
 /* -------------------------------- */
@@ -727,10 +777,11 @@ function task18(){
   console.clear();
 
   let taskTitle = 'Задание №18';
-  let result = null || 2 && 3 || 4;
-  let answerToTask18 = 'Возвращенным значением будет число 3. У оператора И больший приоритет, поэтому он выполнится первым и вернет число 3, т.к. возвращает либо первый false, либо последний true. Затем слева на право выполнится оператор ИЛИ и вернет число 3, т.к. ИЛИ возвращает либо первый true, либо последний false.';
 
-  logTaskResults(taskTitle, false, `Возвращенное значение: ${result}`, answerToTask18);
+  let number = +prompt('Введите число', '');
+  let square = number * number;
+
+  logTaskResults(taskTitle, false, `Квадрат Вашего числа ${number} составляет ${square}`);
 }
 
 /* -------------------------------- */
@@ -740,63 +791,58 @@ function task19(){
   console.clear();
 
   let taskTitle = 'Задание №19';
-  let age = +prompt('Введите Ваш возраст', '');
-
-  if(Number.isNaN(age) || !age){
-    logTaskResults(taskTitle, false, 'Извините, но так уж сложилось, что возраст должен быть числом');
-    return;
-  }
-
-  let successMessage = 'Вам от 14 до 90 лет';
-  let failureMessage = 'Вам либо меньше 14, либо больше 90 лет';
-  let errorMessage = 'Возраст не может быть отрицательным числом!';
   
-  if(age >= 14 && age <= 90){
-    logTaskResults(taskTitle, false, successMessage);
-  } else if(age < 0){
-    logTaskResults(taskTitle, false, errorMessage);
+  let num1 = +prompt('Введите первое число', '');
+  let num2 = +prompt('Введите второе число', '');
+  let num3 = +prompt('Введите третье число', '');
+
+  let initMessage = `Введенные числа: ${num1} ${num2} ${num3}`;
+  let resultMessage = '';
+
+  let min;
+  let max;
+
+  if(num1 < num2 && num1 < num3){
+    min = num1;
+  } else if(num2 < num3){
+    min = num2;
   } else {
-    logTaskResults(taskTitle, false, failureMessage);
+    min = num3;
   }
+
+  if(num1 > num2 && num1 > num3){
+    max = num1;
+  } else if(num2 > num3){
+    max = num2;
+  } else {
+    max = num3;
+  }
+
+  let dif = max - min;
+
+  resultMessage = `Наименьшее из трёх чисел: ${min}. Наибольшее из трёх чисел: ${max}. Разница между большим и меньшим: ${dif}`;
+
+  logTaskResults(taskTitle, false, initMessage, resultMessage);
 }
 
 /* -------------------------------- */
 /* Задание №20
 /* -------------------------------- */
-function task20(subtaskNumber){
+function task20(){
   console.clear();
 
   let taskTitle = 'Задание №20';
-  let age = +prompt('Введите Ваш возраст', '');
+  
+  let number = Math.abs(+prompt('Введите число', ''));
+  let numberType;
 
-  if(Number.isNaN(age) || !age){
-    logTaskResults(taskTitle, false, 'Извините, но так уж сложилось, что возраст должен быть числом');
-    return;
+  if(number % 2 === 0){
+    numberType = 'четное';
+  } else {
+    numberType = 'нечетное';
   }
 
-  let successMessage = 'Вам либо 14 лет и меньше, либо 90 лет и больше';
-  let failureMessage = 'Вам от 15 до 89 лет';
-  let errorMessage = 'Возраст не может быть отрицательным числом!';
-
-  if(subtaskNumber === 1){
-    if(!(age > 14) || !(age < 90)){
-      logTaskResults(taskTitle, false, successMessage);
-    } else if(age < 0){
-      logTaskResults(taskTitle, false, errorMessage);
-    } else {
-      logTaskResults(taskTitle, false, failureMessage);
-    }
-  }
-
-  if(subtaskNumber === 2){
-    if(age <= 14 || age >= 90 ){
-      logTaskResults(taskTitle, false, successMessage);
-    } else if(age < 0){
-      logTaskResults(taskTitle, false, errorMessage);
-    } else {
-      logTaskResults(taskTitle, false, failureMessage);
-    }
-  }
+  logTaskResults(taskTitle, false, `Ваше число ${number} ${numberType}`);
 }
 
 /* -------------------------------- */
@@ -806,25 +852,17 @@ function task21(){
   console.clear();
 
   let taskTitle = 'Задание №21';
-  let answerToTask21 = 'Выведутся все, кроме значения \"second\". Число, независимо от того, положительное оно, или отрицательное, при преобразовании в Boolean возвращает true, если оно не равно нулю. \"third\" выводится, т.к. сначала вычисляется оператор && (его приоритет больше, чем ||), который возвращает true, затем вычисляется оператор ||.';
+  
+  let number = prompt('Введите число от 1 до 99', '');
+  let sumOfNumberItems = 0;
 
-  let case1 = 'Ничего не вывелось';
-  let case2 = 'Ничего не вывелось';
-  let case3 = 'Ничего не вывелось';
-
-  if(-1 || 0){
-    case1 = 'first';
+  for(let i = 0; i < number.length; i++){
+    let numberItem = +number[i];
+    sumOfNumberItems +=numberItem;
   }
 
-  if(-1 && 0){
-    case2 = 'second';
-  }
+  logTaskResults(taskTitle, false, `Ваше число: ${number}. Количество цифр в числе: ${number.length}. Сумма цифр числа: ${sumOfNumberItems}`);
 
-  if(null || -1 && 1){
-    case3 = 'third';
-  }
-
-  logTaskResults(taskTitle, false, answerToTask21, case1, case2, case3);
 }
 
 /* -------------------------------- */
@@ -834,32 +872,21 @@ function task22(){
   console.clear();
 
   let taskTitle = 'Задание №22';
-  let userLogin = prompt('Введите логин', '');
+  
+  const CENTIMETERS_IN_INCHES = 2.54;
+  let isInchesToCentimeters = confirm('Вы хотите перевести дюймы в сантиметры?');
 
-  if(userLogin === null || userLogin === ''){
-    logTaskResults(taskTitle, false, 'Ввод логина отменен или не был выполнен.');
-    return;
-  }
+  if(isInchesToCentimeters){
+    let inches = Math.abs(+prompt('Введите количество дюймов',''));
+    let centimeters = inches * CENTIMETERS_IN_INCHES;
 
-  userLogin = userLogin.trim();
-
-  if(userLogin === 'Админ'){
-    let password = prompt('Введите пароль', '');
-
-    if(password === null || password === ''){
-      logTaskResults(taskTitle, false, 'Ввод пароля отменен или не был выполнен.');
-      return;
-    }
-
-    password = password.trim();
-
-    if(password === 'Я главный'){
-      logTaskResults(taskTitle, false, 'Здравствуйте!');
-    } else {
-      logTaskResults(taskTitle, false, 'Неверный пароль');
-    }
+    logTaskResults(taskTitle, false, `В ${inches} дюймах ${centimeters} сантиметров.`);
   } else {
-    logTaskResults(taskTitle, false, 'Я Вас не знаю...');
+    let centimeters = Math.abs(+prompt('Введите количество сантиметров', ''));
+    let inches = centimeters / CENTIMETERS_IN_INCHES;
+    inches = inches.toFixed(2);
+
+    logTaskResults(taskTitle, false, `В ${centimeters} сантиметрах ${inches} дюймов.`);
   }
 }
 
