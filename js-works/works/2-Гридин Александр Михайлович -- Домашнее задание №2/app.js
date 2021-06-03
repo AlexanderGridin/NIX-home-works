@@ -897,27 +897,7 @@ function task23(){
   console.clear();
 
   let taskTitle = 'Задание №23';
-  let browser = prompt('Ввдеите название браузера', '');
-
-  if(browser){
-    browser = browser.trim();
-  } else {
-    logTaskResults(taskTitle, false, 'Что-то пошло не так при вводе названия браузера...');
-    return;
-  }
-
-  if(browser === 'Edge'){
-    logTaskResults(taskTitle, false, 'You\'ve got the Edge!');
-  } else if(
-    browser === 'Chrome' ||
-    browser === 'Firefox' ||
-    browser === 'Safari' ||
-    browser === 'Opera'
-  ){
-    logTaskResults(taskTitle, false, 'Okay we support these browsers too');
-  } else {
-    logTaskResults(taskTitle, false, 'We hope that this page looks ok');
-  }
+  
 }
 
 /* -------------------------------- */
@@ -927,24 +907,37 @@ function task24(){
   console.clear();
 
   let taskTitle = 'Задание №24';
-  let a = +prompt('a? (Если что, это должно быть число:))', '');
+  
+  let number = Math.abs(+prompt('Введите трёхзначное число', ''));
+  let numberInfo = `Ваше число: ${number}. `;
+  let numberString = String(number);
 
-  switch(a){
-    case 0:
-      logTaskResults(taskTitle, false, 0);
-      break;
+  if(number % 2 === 0){
+    numberInfo += 'Число четное. ';
 
-    case 1:
-      logTaskResults(taskTitle, false, 1);
-      break;
+    let sumOfDigits = 0;
 
-    case 2:
-    case 3:
-      logTaskResults(taskTitle, false, '2, 3');
-      break;
+    for(let i = 0; i < numberString.length; i++){
+      let digit = +numberString[i];
 
-    default:
-      logTaskResults(taskTitle, false, 'Some other numbers');
+      sumOfDigits += digit;
+    }
+
+    numberInfo += `Сумма его цифр равна ${sumOfDigits}.`;
+    logTaskResults(taskTitle, false, numberInfo);
+  } else {
+    numberInfo += 'Число нечетное. ';
+
+    let multiplicationOfDigits = 1;
+
+    for(let i = 0; i < numberString.length; i++){
+      let digit = +numberString[i];
+
+      multiplicationOfDigits *= digit;
+    }
+
+    numberInfo += `Произведение его цифр равно ${multiplicationOfDigits}.`;
+    logTaskResults(taskTitle, false, numberInfo);
   }
 }
 
@@ -955,42 +948,60 @@ function task25(){
   console.clear();
 
   let taskTitle = 'Задание №25';
-  let number = +prompt('Введите число (можно больше, или меньше нуля)', '');
+  
+  let triangleSideLenght1 = Math.abs(+prompt('Введите длину первой стороны треугольника', ''));
+  let triangleSideLenght2 = Math.abs(+prompt('Введите длину второй стороны треугольника', ''));
+  let triangleSideLenght3 = Math.abs(+prompt('Введите длину третьей стороны треугольника', ''));
 
-  if(!number){
-    logTaskResults(taskTitle, false, 'Что-то пошло не так при вводе числа...');
-    return;
-  }
-
-  if(number >= 0){
-    number++;
-    logTaskResults(taskTitle, false, number);
+  if(
+    (triangleSideLenght1 + triangleSideLenght2) > triangleSideLenght3 &&
+    (triangleSideLenght1 + triangleSideLenght3) > triangleSideLenght2 &&
+    (triangleSideLenght2 + triangleSideLenght3) > triangleSideLenght1
+  ){
+    logTaskResults(taskTitle, false, `Введенные длины сторон треугольника: ${triangleSideLenght1} ${triangleSideLenght2} ${triangleSideLenght3} . При таких длинах сторон треугольник может существовать.`);
   } else {
-    logTaskResults(taskTitle, false, number);
+    logTaskResults(taskTitle, false, `Введенные длины сторон треугольника: ${triangleSideLenght1} ${triangleSideLenght2} ${triangleSideLenght3} . При таких длинах сторон треугольник не может существовать.`)
   }
 }
 
 /* -------------------------------- */
 /* Задание №26
 /* -------------------------------- */
-function task26(){
+function task26(taskCase){
   console.clear();
 
   let taskTitle = 'Задание №26';
-  let number = +prompt('Введите число (можно больше, или меньше нуля)', '');
 
-  if(!number){
-    logTaskResults(taskTitle, false, 'Что-то пошло не так при вводе числа...');
-    return;
+  let minOfRange = -10;
+  let maxOfRange = 10;
+  
+  let point = {
+    x: null,
+    y: null,
+    dstanceToCoordinatesStart: null,
+  };
+
+  switch(taskCase){
+    case 1:
+      point.x = getRandomNumber(minOfRange, maxOfRange);
+      point.y = getRandomNumber(minOfRange, maxOfRange);
+      break;
+
+    case 2:
+      point.x = 4;
+      point.y = 9;
+      break;
   }
 
-  if(number >= 0){
-    number++;
+  let initMessage = `Координаты точки: Х:${point.x}, Y:${point.y}`;
+  let radius = 10;
+  let dstanceToCoordinatesStart = Math.sqrt(point.x * point.x + point.y * point.y);
+
+  if(dstanceToCoordinatesStart < radius){
+    logTaskResults(taskTitle, false, initMessage, `Данная точка лежит внутри окружности.`);
   } else {
-    number -= 2;
+    logTaskResults(taskTitle, false, initMessage, `Данная точка лежит за пределами окружности.`);
   }
-
-  logTaskResults(taskTitle, false, number);
 }
 
 /* -------------------------------- */
@@ -1000,22 +1011,21 @@ function task27(){
   console.clear();
 
   let taskTitle = 'Задание №27';
-  let number = +prompt('Введите число (можно больше, или меньше нуля)', '');
+  
+  console.group(taskTitle);
 
-  if(!number && number !== 0){
-    logTaskResults(taskTitle, false, 'Что-то пошло не так при вводе числа...');
-    return;
-  }
+  let user = {};
+  user.name = 'John';
+  user.surname = 'Smith';
+  console.table(user);
 
-  if(number === 0){
-    number = 10;
-  } else if(number > 0){
-    number++;
-  } else {
-    number -= 2;
-  }
+  user.name = 'Pete';
+  console.table(user);
 
-  logTaskResults(taskTitle, false, number);
+  delete user.name;
+  console.table(user);
+
+  console.groupEnd();
 }
 
 /* -------------------------------- */
@@ -1025,28 +1035,20 @@ function task28(){
   console.clear();
 
   let taskTitle = 'Задание №28';
-  let positiveNumbersCounter = 0;
+  
+  console.group(taskTitle);
 
-  let min = -10;
-  let max = 10;
+  const user = {
+    name: 'John'
+  };
+  console.table(user);
 
-  let num1 = getRandomNumber(min, max);
-  let num2 = getRandomNumber(min, max);
-  let num3 = getRandomNumber(min, max);
+  user.name = 'Pete';
+  console.table(user);
 
-  if(num1 > 0){
-    positiveNumbersCounter++;
-  }
+  console.log('Это работает потому, что переменной user нельзя присвоить другое значение. А изменить свойство объекта - можно.');
 
-  if(num2 > 0){
-    positiveNumbersCounter++;
-  }
-
-  if(num3 > 0){
-    positiveNumbersCounter++;
-  }
-
-  logTaskResults(taskTitle, false, `Диапазон генерации чисел: ${min} -- ${max}`, `Сгенерированные числа: ${num1} ${num2} ${num3}`, `Количество положительных чисел: ${positiveNumbersCounter}`);
+  console.groupEnd();
 }
 
 /* -------------------------------- */
@@ -1056,41 +1058,32 @@ function task29(){
   console.clear();
 
   let taskTitle = 'Задание №29';
-  let positiveNumbersCounter = 0;
-  let negativeNumbersCounter = 0;
+  
+  let salaries = {
+    John: 100,
+    Ann: 160,
+    Pete: 130,
+  };
+  let isEmptySalaries = isEmptyObject(salaries);
+  let sum = 0;
 
-  let min = -10;
-  let max = 10;
-
-  let num1 = getRandomNumber(min, max);
-  let num2 = getRandomNumber(min, max);
-  let num3 = getRandomNumber(min, max);
-
-  if(num1 > 0){
-    positiveNumbersCounter++;
+  if(!isEmptySalaries){
+    for(let teammate in salaries){
+      sum += salaries[teammate];
+    }
   }
 
-  if(num1 < 0){
-    negativeNumbersCounter++;
-  }
+  logTaskResults(taskTitle, false, `Сумма зарплат равна ${sum}`);
 
-  if(num2 > 0){
-    positiveNumbersCounter++;
+  // Functions
+  function isEmptyObject(obj){
+    for(let i in obj){
+      if(obj.hasOwnProperty(i)){
+        return false;
+      }
+    }
+    return true;
   }
-
-  if(num2 < 0){
-    negativeNumbersCounter++;
-  }
-
-  if(num3 > 0){
-    positiveNumbersCounter++;
-  }
-
-  if(num3 < 0){
-    negativeNumbersCounter++;
-  }
-
-  logTaskResults(taskTitle, false, `Диапазон генерации чисел: ${min} -- ${max}`, `Сгенерированные числа: ${num1} ${num2} ${num3}`, `Количество положительных чисел: ${positiveNumbersCounter}`, `Количество отрицательных чисел: ${negativeNumbersCounter}`);
 }
 
 /* -------------------------------- */
@@ -1101,19 +1094,7 @@ function task30(){
 
   let taskTitle = 'Задание №30';
 
-  let min = -10;
-  let max = 10;
-
-  let num1 = getRandomNumber(min, max);
-  let num2 = getRandomNumber(min, max);
-
-  if(num1 > num2){
-    logTaskResults(taskTitle, false, `Сгенерированные числа: ${num1}, ${num2}`, `Большее из двух чисел: ${num1}`);
-  }
-
-  if(num2 > num1){
-    logTaskResults(taskTitle, false, `Сгенерированные числа: ${num1}, ${num2}`, `Большее из двух чисел: ${num2}`);
-  }
+  logTaskResults(taskTitle, false, `Цикл будет бесконечным, из-за хранения чисел в двоичной форме, потери точности при округлении, что ведет к суммированию неточности числа 0.2.`);
 }
 
 /* -------------------------------- */
