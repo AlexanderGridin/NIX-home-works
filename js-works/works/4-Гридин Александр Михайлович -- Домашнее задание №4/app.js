@@ -97,23 +97,30 @@ function task3(){
     return;
   }
 
-  logTaskResults(taskTitle, false, `Что-то пошло не так...`);
+  logTaskResults(taskTitle, false, `Вы отменили ввод, или ввели пустую строку...`);
 
   // Functions
   function readNumber(){
     let number = 0;
+    let isGettingInput = true;
 
-    while(!number && number !== null && number !== ''){
+    while(isGettingInput){
       number = prompt('Введите число', '');
-    }
 
-    if(number){
-      number = +number;
+      if(
+        number === null ||
+        number === '' ||
+        typeof +number === 'number'
+      ){
+        isGettingInput = false;
+      }
 
-      if(!isNaN(number)){
-        return number;
+      if(isNaN(+number)){
+        isGettingInput = true;
       }
     }
+
+    return number ? +number : null;
   }
 }
 
@@ -311,7 +318,228 @@ function task11(){
   console.clear();
 
   let taskTitle = 'Задание №11';
+
+  let arr1 = [-1, 2, 3, -9];
+  let arr2 = [2, -1, 2, 3, -9];
+  let arr3 = [-1, 2, 3, -9, 11];
+  let arr4 = [-2, -1, 1, 2];
+  let arr5 = [100, -9, 2, -3, 5];
+  let arr6 = [1, 2, 3];
+  let arr7 = [-1, -2, -3];
+
+  let maxSubSum = getMaxSubSum(arr2);
+
+  logTaskResults(taskTitle, false, `Исходный массив: ${maxSubSum.arr}\nНайденный подмассив: ${maxSubSum.newArr}\nСумма элементов: ${maxSubSum.maxSum}`);
+
+  // Functions
+  function getMaxSubSum(arr){
+    let maxSum = 0;
+    let currentSum = 0;
+    let firsItem = arr[0];
+    let newArr = [];
+
+    for(let item of arr){
+      currentSum += item;
+      
+      maxSum = Math.max(maxSum, currentSum);
+
+      if(currentSum < 0){
+        currentSum = 0;
+        continue;
+      }
+
+      newArr.push(item);
+
+      if(item >= maxSum){
+        newArr = [];
+        newArr.push(item);
+      }
+    }
+
+    if(arr[0] >= maxSum){
+      newArr = [];
+      newArr.push(firsItem);
+    }
+
+    return {
+      arr,
+      maxSum,
+      newArr
+    };
+  }
 }
+
+/* -------------------------------- */
+/* Задание №12
+/* -------------------------------- */
+function task12(){
+  console.clear();
+
+  let taskTitle = 'Задание №12';
+
+  logTaskResults(taskTitle, false, `Если убрать else поведение функции никак не изменится, т.к., когда мы доходим до return при выполнении кода ф-ии, осуществляется возврат значения и выход из ф-ии. При этом, код, который находится ниже return выполнен не будет.`);
+}
+
+/* -------------------------------- */
+/* Задание №13
+/* -------------------------------- */
+function task13(){
+  console.clear();
+
+  let taskTitle = 'Задание №13';
+  let resultMessage;
+
+  let age = +prompt('Введите Ваш возраст');
+
+  if(checkAge(age)){
+    resultMessage = 'Доступ разрешен!';
+  } else {
+    resultMessage = 'Родители разрешили?';
+  }
+
+  logTaskResults(taskTitle, false, resultMessage);
+
+  // Functions
+  function checkAge(age){
+    return age > 18 || false;
+  }
+}
+
+/* -------------------------------- */
+/* Задание №14
+/* -------------------------------- */
+function task14(){
+  console.clear();
+
+  let taskTitle = 'Задание №14';
+
+  let a = +prompt('Введите число a');
+  let b = +prompt('Введите число b');
+
+  logTaskResults(taskTitle, false, `Число а: ${a}\nЧисло b: ${b}\n\nМеньшее из этих чисел: ${min(a, b)}`);
+
+  // Functions
+  function min(a, b){
+    return a > b ? b : a;
+  }
+}
+
+/* -------------------------------- */
+/* Задание №15
+/* -------------------------------- */
+function task15(){
+  console.clear();
+
+  let taskTitle = 'Задание №15';
+
+  let values = {
+    number: +prompt('Введите число', ''),
+    n: +prompt('Введите степень, в которую необходимо возвести Ваше число')
+  }
+
+  if(checkValues(values)){
+    let x = values.number;
+    let n = values.n;
+
+    let result = pow(x, n);
+    logTaskResults(taskTitle, false, `Ваше число: ${values.number}\nСтепень, в которую необходимо возвести число: ${values.n}\n\nРезультат возведения числа в степень: ${result}`);
+  } else {
+    task15();
+  }
+
+  // Functions
+  function pow(x, n){
+    let result = 1;
+
+    for(let i = 0; i < n; i++){
+      result *= x;
+    }
+
+    return result;
+  }
+  
+  function checkValues(values){
+    for(let prop in values){
+      let value = values[prop];
+
+      if(
+        value <= 0 || 
+        isNaN(value) || 
+        value % 1 !== 0
+      ){
+        return false;
+      }
+    }
+
+    return true;
+  }
+}
+
+/* -------------------------------- */
+/* Задание №16
+/* -------------------------------- */
+function task16(){
+  console.clear();
+
+  let taskTitle = 'Задание №16';
+
+  let ask = (question, yes, no) => confirm(question) ? yes() : no();
+
+  let result = ask(
+    'Вы согласны?',
+    () => 'Вы согласились',
+    () => 'Вы отменили выполнение'
+  );
+
+  logTaskResults(taskTitle, false, result);
+}
+
+/* -------------------------------- */
+/* Задание №17
+/* -------------------------------- */
+function task17(){
+  console.clear();
+
+  let taskTitle = 'Задание №17';
+
+  let monthlyIncome = 3333;
+  let monthlyExpenses = 1750;
+  let palmTreeCost = 8000;
+
+  let totalMonthsForSavingMoney = Math.ceil(palmTreeCost / (monthlyIncome - monthlyExpenses));
+
+  logTaskResults(taskTitle, false, `Количество месяцев, за которое мы насобираем на пальму: ${totalMonthsForSavingMoney}`);
+}
+
+/* -------------------------------- */
+/* Задание №18
+/* -------------------------------- */
+function task18(){
+  console.clear();
+
+  let taskTitle = 'Задание №18';
+
+  let sumOfNegativeNumbers = 0;
+  let numbersCounter = 0;
+  let negativeNumbers = [];
+  let numbersList = [];
+
+  while(numbersCounter < 10){
+    let number = +prompt(`Введите число №${numbersCounter+1}`, '');
+
+    numbersList.push(number);
+
+    if(number < 0){
+      negativeNumbers.push(number);
+      sumOfNegativeNumbers += number;
+    }
+
+    numbersCounter++;
+  }
+
+  logTaskResults(taskTitle, false, `Введенные числа: ${numbersList}\nВведенные отрицательные числа: ${negativeNumbers}\n\nСумма введенных отрицательных чисел: ${sumOfNegativeNumbers}`);
+}
+
 
 /* -------------------------------- */
 /* MAIN
