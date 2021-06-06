@@ -174,26 +174,27 @@ function task6(){
 
   let taskTitle = 'Задание №6';
 
-  let str = 'javaScript';
+  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  logTaskResults(taskTitle, false, `Исходная строка: ${str}.\nОбработанная строка: ${ucFirst(str)}`);
+  logTaskResults(taskTitle, false, `Результат работы ф-ии inBetween(5, 10): ${arr.filter(inBetween(5, 10)).join(', ')}\nРезультат работы ф-ии inArray([1, 7, 10]): ${arr.filter(inArray([1, 7, 10])).join(', ')}`);
 
   // Functions
-  function ucFirst(str){
-    let newStr = '';
-
-    for(let i = 0; i < str.length; i++){
-      let symbol = str[i];
-
-      if(i === 0){
-        newStr += symbol.toUpperCase();
-        continue;
+  function inBetween(a, b){
+    return function(item){
+      if(item >= a && item <= b){
+        return true;
       }
-
-      newStr += symbol;
     }
+  }
 
-    return newStr;
+  function inArray(arr){
+    return function(item){
+      for(let element of arr){
+        if(item === element){
+          return true;
+        }
+      }
+    }
   }
 }
 
@@ -205,26 +206,18 @@ function task7(){
 
   let taskTitle = 'Задание №7';
 
-  let str1 = 'buy ViAgRA now';
-  let str2 = 'free xxxxx';
-  let str3 = 'innocent rabbit';
 
-  logTaskResults(taskTitle, false, `Результаты работы функции checkSpam:\n\tСтрока "${str1}" => ${checkSpam(str1)}\n\tСтрока ${str2} => ${checkSpam(str2)}\n\tСтрока ${str3} => ${checkSpam(str3)}`);
+  let number = +prompt('Введите число', '');
 
-  // Function
-  function checkSpam(str){
-    let spamWords = ['xxx', 'viagra'];
-    str = str.toLowerCase();
+  logTaskResults(taskTitle, false, `Факториал Вашего числа: ${factorial(number)}`);
 
-    for(let i = 0; i < spamWords.length; i++){
-      let spamWord = spamWords[i];
-
-      if(str.includes(spamWord)){
-        return true;
-      }
+  // Functions
+  function factorial(n){
+    if(n === 1){
+      return 1;
     }
 
-    return false;
+    return n * factorial(n - 1);
   }
 }
 
@@ -236,19 +229,45 @@ function task8(){
 
   let taskTitle = 'Задание №8';
 
-  let str = 'Lorem, ipsum dolor';
-  let strMaxLength = 12;
-  let truncatedStr = truncate(str, strMaxLength);
+  let searchedPosition = +prompt('Введите номер числа Фибоначчи, которое Вы хотите узнать', '');
 
-  logTaskResults(taskTitle, false, `Изначальная строка: ${str}.\nДлина изначальной строки: ${str.length}\n\nМаксимальная длина строки после обрезки: ${strMaxLength}\n\nОбработанная строка: ${truncatedStr}\nДлина обработанной строки: ${truncatedStr.length}`);
+  console.group(taskTitle);
+
+  console.time('Время работы ф-ии fib()');
+  let result = fib(searchedPosition);
+  console.timeEnd('Время работы ф-ии fib()');
+
+  console.log(`Номер числа Фибоначчи, которое Вы хотите узнать: ${searchedPosition}`);
+  console.log(`Массив с числами Фибоначчи: ${result.fibNums.join(', ')}`);
+  console.log(`Ваше число Фибоначчи: ${result.result}`);
+
+  console.groupEnd();
+
+  
 
   // Functions
-  function truncate(str, maxLength){
-    if(str.length > maxLength){
-      return str.slice(0, maxLength - 3) + '...';
+  function fib(n){
+    let fibNums = generateFib(n);
+
+    return {
+      fibNums,
+      result: fibNums[n-1]
+    };
+  }
+
+  function generateFib(n){
+    let a = n - 1;
+    let b = n - 2;
+    let nums = [];
+
+    if(b === 0){
+      nums.push(1, 1);
+      return nums;
     }
 
-    return str;
+    nums = nums.concat(generateFib(a));
+    nums.push(nums[nums.length - 1] + nums[nums.length - 2]);
+    return nums;
   }
 }
 

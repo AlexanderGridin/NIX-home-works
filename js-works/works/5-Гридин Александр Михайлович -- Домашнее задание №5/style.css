@@ -31,8 +31,8 @@ img
 
 .custom-list li.completed
 {
-  opacity: .2;
-  /* border: 1px solid #24ADF3; */
+  /* opacity: .2; */
+  border: 1px solid #24ADF3;
 }
 
 .custom-list li:last-child
