@@ -2,7 +2,7 @@ import ReVue from './ReVue.js';
 
 class Component{
   constructor(component){
-    this.name = component.name;
+    this.name = null;
     this.type = component.type;
     this.props = component.props;
     this.element = null;
@@ -20,8 +20,9 @@ class Component{
     return this;
   }
 
-  build(){
+  build(name){
     this.element = document.createElement(this.type);
+    this.name = name;
 
     handleElementProps(this.element, this.props);
     handleElementChildrens(this.element, this.childrens);

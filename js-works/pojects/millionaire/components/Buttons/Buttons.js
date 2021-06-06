@@ -2,7 +2,6 @@ import Component from '../../ReVue/Component.js';
 import ReVue from '../../ReVue/ReVue.js';
 
 let ButtonPrimary = new Component({
-  name: 'ButtonPrimary',
   type: 'button',
   props: {
     classNames: 'btn btn-primary',
@@ -11,7 +10,6 @@ let ButtonPrimary = new Component({
 });
 
 let ButtonSecondary = new Component({
-  name: 'ButtonSecondary',
   type: 'button',
   props: {
     classNames: 'btn btn-secondary',
@@ -19,5 +17,12 @@ let ButtonSecondary = new Component({
   },
 });
 
+let ButtonsWrapper = new Component({
+  type: 'div',
+  props: {
+    classNames: 'buttons-wrapper'
+  }
+});
 
-export {ButtonPrimary, ButtonSecondary};
+
+export {ButtonsWrapper, ButtonPrimary, ButtonSecondary};
