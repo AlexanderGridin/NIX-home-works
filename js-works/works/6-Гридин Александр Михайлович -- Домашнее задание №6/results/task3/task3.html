@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задание №3</title>
+
+  <style>
+    table
+    {
+      border: 1px solid #000;
+      border-collapse: collapse;
+    }
+
+    table td
+    {
+      border: 1px solid #000;
+      padding: 7px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Результат задания №3</h1>
+  <p>
+    Дополнительно найденные элементы были выведены в консоль.
+  </p>
+  <hr>
+
+  <form name="search">
+    <label>Search the site:
+      <input type="text" name="search">
+    </label>
+    <input type="submit" value="Search!">
+  </form>
+  <hr>
+  <form name="search-person">
+    Search the visitors:
+    <table id="age-table">
+      <tr>
+        <td>Age:</td>
+        <td id="age-list">
+          <label>
+            <input type="radio" name="age" value="young">less than
+            18</label>
+          <label>
+            <input type="radio" name="age" value="mature">18-50</label>
+          <label>
+            <input type="radio" name="age" value="senior">more than
+            50</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Additionally:</td>
+        <td>
+          <input type="text" name="info[0]">
+          <input type="text" name="info[1]">
+          <input type="text" name="info[2]">
+        </td>
+      </tr>
+    </table>
+    <input type="submit" value="Search!">
+  </form>
+
+  <div class="code-snippets">
+    <h2>Примеры кода</h2>
+    <hr>
+
+    <h3>Как найти Таблицу с id="age-table"?</h3>
+    <code>
+      let table = document.querySelector('#age-table');
+    </code>
+    <hr>
+
+    <h3>Как найти Все элементы label внутри этой таблицы (их три)?</h3>
+    <code>
+      let labels = table.querySelectorAll('label');
+    </code>
+    <hr>
+
+    <h3>Как найти Первый td в этой таблице (со словом «Age»)?</h3>
+    <code>
+      let firstTd = table.querySelector('td');
+    </code>
+    <hr>
+
+    <h3>Как найти Форму form с именем name="search"?</h3>
+    <code>
+      let searchForm = document.querySelector('form[name="search"]');
+    </code>
+    <hr>
+
+    <h3>Как найти Первый input в этой форме?</h3>
+    <code>
+      let firstInput = searchForm.querySelector('input');
+    </code>
+    <hr>
+
+    <h3>Как найти Последний input в этой форме?</h3>
+    <code>
+      let lastInput = searchForm.querySelectorAll('input');
+      lastInput = lastInput[lastInput.length - 1];
+    </code>
+    <hr>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

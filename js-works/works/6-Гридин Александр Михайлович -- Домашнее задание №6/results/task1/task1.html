@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задание №1</title>
+</head>
+<body>
+  <h1>Результаты задания №1</h1>
+  <p>
+    Для организации страницы исходный код задания был обернут в <b>div</b> с классом <b>task</b>. В связи с этим, поиск элементов осуществляется от данного элемента.
+  </p>
+  <p>
+    Дополнительно все требуемые элементы были выведены в консоль.
+  </p>
+  <hr>
+
+  <div class="task">
+    <div>Пользователи:</div>
+    <ul>
+      <li>Джон</li>
+      <li>Пит</li>
+    </ul>
+  </div>
+  <hr>
+
+  <h2>Код получения <u>div</u></h2>
+  <code>let div = root.firstElementChild;</code>
+
+  <h2>Код получения <u>ul</u></h2>
+  <code>let ul = root.lastElementChild;</code>
+
+  <h2>Код получения второго <u>li</u> с именем <u>Пит</u></h2>
+  <code>let li = root.lastElementChild.lastElementChild;</code>
+
+  <script src="script.js"></script>
+</body>
+</html>
