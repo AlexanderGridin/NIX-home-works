@@ -1,0 +1,30 @@
+.random-generator__form
+{
+  padding: 25px;
+  text-align: center;
+  background: #FFF;
+  width: 100%;
+
+  &-inputs-wrapper
+  {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .text-input
+  {
+    margin-top: 0;
+  }
+
+  &-min-text-input,
+  &-max-text-input
+  {
+    width: 49%;
+  }
+
+  &-total-numbers
+  {
+    width: 100%;
+  }
+}

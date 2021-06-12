@@ -1,0 +1,131 @@
+.calculator__keyboard
+{
+  display: flex;
+  justify-content: space-between;
+
+  button
+  {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+    border: none;
+    line-height: 50px;
+  }
+
+  &-column-right
+  {
+    display: flex;
+    flex-direction: column;
+
+    .button
+    {
+      background: #FF980B;
+      color: #FFF;
+
+      &:hover
+      {
+        background: #FFF;
+        color: #FF980B;
+      }
+    }
+  }
+
+  &-actions-section,
+  &-numeric-section
+  {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 180px;
+    width: 100%;
+  }
+
+  &-actions-section
+  {
+    .button
+    {
+      background: #B5B5B5;
+
+      &:hover
+      {
+        background: #FFF;
+        color: #000;
+      }
+    }
+  }
+
+  &-numeric-section
+  {
+    .button
+    {
+      background: #414141;
+      color: #FFF;
+
+      &:hover
+      {
+        background: #FFF;
+        color: #000;
+      }
+    }
+
+    button:nth-child(1)
+    {
+      order: 10;
+      width: 110px;
+      border-radius: 50px;
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    button:nth-child(2)
+    {
+      order: 7;
+    }
+
+    button:nth-child(3)
+    {
+      order: 8;
+    }
+
+    button:nth-child(4)
+    {
+      order: 9;
+    }
+
+    button:nth-child(5)
+    {
+      order: 4;
+    }
+
+    button:nth-child(6)
+    {
+      order: 5;
+    }
+
+    button:nth-child(7)
+    {
+      order: 6;
+    }
+
+    button:nth-child(8)
+    {
+      order: 1;
+    }
+
+    button:nth-child(9)
+    {
+      order: 2;
+    }
+
+    button:nth-child(10)
+    {
+      order: 3;
+    }
+
+    button:nth-child(11)
+    {
+      order: 11;
+    }
+  }
+}

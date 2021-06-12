@@ -1,0 +1,16 @@
+.random-generator
+{
+  max-width: 750px;
+  width: 100%;
+  border: 5px solid #000;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  position: realtive;
+  z-index: 1;
+
+  &__title
+  {
+    margin: 0;
+    text-align: center;
+    padding: 25px;
+  }
+}

@@ -1,0 +1,28 @@
+.random-generator__result
+{
+  padding: 25px;
+  text-align: center;
+  background: #FFF;
+  width: 100%;
+
+  h2
+  {
+    margin: 0;
+  }
+
+  &-number
+  {
+    margin: 25px;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #24ACF2;
+    word-break: break-word;
+
+    span
+    {
+      display: inline-block;
+      margin: 5px;
+      text-decoration: underline;
+    }
+  }
+}

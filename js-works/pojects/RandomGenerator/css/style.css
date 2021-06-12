@@ -1,0 +1,177 @@
+:root {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1em;
+  line-height: 1.3;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+body, * {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background: none;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+#revue-app {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
+  background: url("https://image.freepik.com/free-vector/abstract-geometric-shapes-outline-circle-triangle-cube-trendy-memphis-style-symbols-lines-dots-patterns-geometry-maths-hipster-ornament-abstract-signs-isolated-vector-icons-set_102902-2029.jpg");
+  background-position: center;
+  position: relative;
+}
+
+#revue-app::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  background: #000;
+  color: #FFF;
+  width: 100%;
+}
+
+.button {
+  border: none;
+  border-radius: 0;
+  font-family: inherit;
+  background: #000;
+  font-size: 1rem;
+  padding: 7px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+  color: #FFF;
+  border: 3px solid #000;
+}
+
+.button:hover {
+  background: #FFF;
+  color: #000;
+  cursor: pointer;
+}
+
+.text-input {
+  font-size: 1rem;
+  padding: 7px;
+  height: 45px;
+  border: 3px solid #ddd;
+  border-radius: none;
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  margin: 10px 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.text-input:hover, .text-input:focus {
+  border: 3px solid #000;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.random-generator {
+  max-width: 750px;
+  width: 100%;
+  border: 5px solid #000;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  position: realtive;
+  z-index: 1;
+}
+
+.random-generator__title {
+  margin: 0;
+  text-align: center;
+  padding: 25px;
+}
+
+.random-generator__form {
+  padding: 25px;
+  text-align: center;
+  background: #FFF;
+  width: 100%;
+}
+
+.random-generator__form-inputs-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.random-generator__form .text-input {
+  margin-top: 0;
+}
+
+.random-generator__form-min-text-input, .random-generator__form-max-text-input {
+  width: 49%;
+}
+
+.random-generator__form-total-numbers {
+  width: 100%;
+}
+
+.random-generator__result {
+  padding: 25px;
+  text-align: center;
+  background: #FFF;
+  width: 100%;
+}
+
+.random-generator__result h2 {
+  margin: 0;
+}
+
+.random-generator__result-number {
+  margin: 25px;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #24ACF2;
+  word-break: break-word;
+}
+
+.random-generator__result-number span {
+  display: inline-block;
+  margin: 5px;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=style.css.map */
