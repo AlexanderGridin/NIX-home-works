@@ -112,6 +112,7 @@ body {
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   position: realtive;
   z-index: 1;
+  max-height: 90%;
 }
 
 .random-generator__title {
@@ -167,6 +168,8 @@ body {
   font-size: 3rem;
   color: #24ACF2;
   word-break: break-word;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .random-generator__result-number span {

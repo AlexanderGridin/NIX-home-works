@@ -17,6 +17,8 @@
     font-size: 3rem;
     color: #24ACF2;
     word-break: break-word;
+    max-height: 400px;
+    overflow-y: auto;
 
     span
     {
