@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Результат задания №4</title>
+</head>
+<body>
+  <h1>Результат задания №4</h1>
+  <p>
+    Результаты задания были выведены в консоль.
+  </p>
+  <hr>
+
+  <input type="button" id="hider" value="Нажмите, чтобы спрятать
+  текст" />
+  <div id="text">Текст</div>
+  <script>
+    let hider = document.querySelector('#hider');
+    let text = document.querySelector('#text');
+
+    hider.addEventListener('click', () => {
+      text.style.display = 'none';
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

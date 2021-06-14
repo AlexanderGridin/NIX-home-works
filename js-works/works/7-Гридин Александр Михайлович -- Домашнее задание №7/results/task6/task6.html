@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Результат задания №6</title>
+
+  <style>
+    button::before
+    {
+      content: '▶';
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    button.open::before
+    {
+      content: '▼';
+    }
+
+    .list
+    {
+      height: 0;
+      overflow: hidden;
+      transition: 0.4s;
+      background: #efefef;
+      margin-top: 10px;
+    }
+
+    ul
+    {
+      padding: 7px;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Результат задания №6</h1>
+  <hr>
+
+    
+  <button type="button">Сладости (нажми меня)!</button>
+  <div class="list">
+    <ul>
+      <li>Пирожное</li>
+      <li>Пончик</li>
+      <li>Мёд</li>
+    </ul>
+  </div>
+
+  <script>
+    let button = document.querySelector('button');
+    let list = document.querySelector('.list');
+
+    button.addEventListener('click', function(){
+      this.classList.toggle('open');
+      
+      if(this.classList.contains('open')){
+        list.style.height = `${list.scrollHeight}px`;
+      } else {
+        list.style.height = '0';
+      }
+    });
+  </script>
+</body>
+</html>

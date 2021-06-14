@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашнее задание №6</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h1>Гридин Александр Михайлович</h1>
+    <h2>Домашнее задание №8 в блоке JavaScript</h2>
+    <hr>
+
+    <pre>
+      class Clock{
+        constructor({ template }){
+          this.timer;
+          this.template = template;
+        }
+
+        render() {
+          let date = new Date();
+
+          let hours = date.getHours();
+          if (hours < 10) hours = '0' + hours;
+
+          let mins = date.getMinutes();
+          if (mins < 10) mins = '0' + mins;
+
+          let secs = date.getSeconds();
+          if (secs < 10) secs = '0' + secs;
+
+          let output = this.template
+            .replace('h', hours)
+            .replace('m', mins)
+            .replace('s', secs);
+
+          console.log(output);
+        }
+
+        stop(){
+          clearInterval(this.timer);
+        }
+
+        start(){
+          this.render();
+          this.timer = setInterval(this.render.bind(this), 1000);
+        }
+      }
+
+      let clock = new Clock({ template: 'h:m:s' });
+      clock.start();
+    </pre>
+
+    <script>
+
+      class Clock{
+        constructor({ template }){
+          this.timer;
+          this.template = template;
+        }
+
+        render() {
+          let date = new Date();
+
+          let hours = date.getHours();
+          if (hours < 10) hours = '0' + hours;
+
+          let mins = date.getMinutes();
+          if (mins < 10) mins = '0' + mins;
+
+          let secs = date.getSeconds();
+          if (secs < 10) secs = '0' + secs;
+
+          let output = this.template
+            .replace('h', hours)
+            .replace('m', mins)
+            .replace('s', secs);
+
+          console.log(output);
+        }
+
+        stop(){
+          clearInterval(this.timer);
+        }
+
+        start(){
+          this.render();
+          this.timer = setInterval(this.render.bind(this), 1000);
+        }
+      }
+
+      let clock = new Clock({ template: 'h:m:s' });
+      clock.start();
+
+    </script>
+
+  </body>
+
+</html>

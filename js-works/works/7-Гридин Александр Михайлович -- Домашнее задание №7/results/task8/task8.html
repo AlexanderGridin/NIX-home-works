@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Результат задания №8</title>
+
+  <style>
+    .modal-wrapper
+    {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .modal-container
+    {
+      max-width: 350px;
+      background: #FFF;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .modal-text
+    {
+      margin-bottom: 15px;
+    }
+
+    .modal-form input
+    {
+      display: block;
+    }
+
+    .modal-form button
+    {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body style="height: 2000px;">
+  <h1>Результат задания №8</h1>
+  <hr>
+
+  <button class="show-modal">Открыть модальное окно</button>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur consequuntur libero autem exercitationem, dicta neque quibusdam error alias culpa quidem odio vel blanditiis veritatis explicabo praesentium aperiam ducimus beatae ad voluptatum magni illo assumenda soluta, ea quas. Necessitatibus quidem id incidunt doloremque sequi iure quis et vel exercitationem, excepturi deleniti, atque dolore. Aperiam fugit ab facere dolorem eligendi quam illo facilis sint quae, commodi nobis molestias sapiente dolorum voluptatibus eaque culpa beatae inventore tempore voluptatem incidunt dolores? Fugit iste cumque laudantium, deleniti nisi, tempora officiis cupiditate culpa sapiente sint quo consequatur consequuntur corporis voluptatem sequi. Voluptatum deserunt iure obcaecati eaque!</p>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur consequuntur libero autem exercitationem, dicta neque quibusdam error alias culpa quidem odio vel blanditiis veritatis explicabo praesentium aperiam ducimus beatae ad voluptatum magni illo assumenda soluta, ea quas. Necessitatibus quidem id incidunt doloremque sequi iure quis et vel exercitationem, excepturi deleniti, atque dolore. Aperiam fugit ab facere dolorem eligendi quam illo facilis sint quae, commodi nobis molestias sapiente dolorum voluptatibus eaque culpa beatae inventore tempore voluptatem incidunt dolores? Fugit iste cumque laudantium, deleniti nisi, tempora officiis cupiditate culpa sapiente sint quo consequatur consequuntur corporis voluptatem sequi. Voluptatum deserunt iure obcaecati eaque!</p>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur consequuntur libero autem exercitationem, dicta neque quibusdam error alias culpa quidem odio vel blanditiis veritatis explicabo praesentium aperiam ducimus beatae ad voluptatum magni illo assumenda soluta, ea quas. Necessitatibus quidem id incidunt doloremque sequi iure quis et vel exercitationem, excepturi deleniti, atque dolore. Aperiam fugit ab facere dolorem eligendi quam illo facilis sint quae, commodi nobis molestias sapiente dolorum voluptatibus eaque culpa beatae inventore tempore voluptatem incidunt dolores? Fugit iste cumque laudantium, deleniti nisi, tempora officiis cupiditate culpa sapiente sint quo consequatur consequuntur corporis voluptatem sequi. Voluptatum deserunt iure obcaecati eaque!</p>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur consequuntur libero autem exercitationem, dicta neque quibusdam error alias culpa quidem odio vel blanditiis veritatis explicabo praesentium aperiam ducimus beatae ad voluptatum magni illo assumenda soluta, ea quas. Necessitatibus quidem id incidunt doloremque sequi iure quis et vel exercitationem, excepturi deleniti, atque dolore. Aperiam fugit ab facere dolorem eligendi quam illo facilis sint quae, commodi nobis molestias sapiente dolorum voluptatibus eaque culpa beatae inventore tempore voluptatem incidunt dolores? Fugit iste cumque laudantium, deleniti nisi, tempora officiis cupiditate culpa sapiente sint quo consequatur consequuntur corporis voluptatem sequi. Voluptatum deserunt iure obcaecati eaque!</p>
+
+  <script>
+    let button = document.querySelector('.show-modal');
+    
+    button.addEventListener('click', function(e){
+      showPrompt('Введите что-нибудь<br>...умное :)', function(value){
+        alert(value);
+      });
+    });
+
+    function showPrompt(html, callback){
+      let nodes = document.querySelectorAll('*');
+
+      for(let node of nodes){
+        node.setAttribute('tabindex', '-1');
+      }
+
+      document.body.style.overflow = 'hidden';
+
+      let modalWrapper = document.createElement('div');
+      modalWrapper.classList.add('modal-wrapper');
+
+      let modalContainer = document.createElement('div');
+      modalContainer.classList.add('modal-container');
+
+      let modalForm = document.createElement('form');
+      modalForm.classList.add('modal-form');
+      modalForm.setAttribute('action', '#');
+
+      let htmlField = document.createElement('div');
+      htmlField.classList.add('modal-text');
+      htmlField.innerHTML = html;
+
+      let modalInput = document.createElement('input');
+      modalInput.setAttribute('type', 'text');
+      modalInput.setAttribute('name', 'modal-input');
+      modalInput.setAttribute('tabindex', '1');
+
+      let modalSubmit = document.createElement('button');
+      modalSubmit.classList.add('modal-submit');
+      modalSubmit.textContent = 'Ok';
+      modalSubmit.setAttribute('tabindex', '2');
+      modalSubmit.setAttribute('type', 'submit');
+
+      modalSubmit.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+
+        let value = modalInput.value;
+
+        for (let node of nodes) {
+          node.removeAttribute('tabindex');
+        }
+
+        document.body.style.overflow = '';
+        modalWrapper.remove();
+        document.removeEventListener('keydown', closePromptByEsc);
+        callback(value);
+      });
+
+      let modalCancel = document.createElement('button');
+      modalCancel.classList.add('modal-cancel');
+      modalCancel.textContent = 'Cancel';
+      modalCancel.setAttribute('tabindex', '3');
+      modalCancel.setAttribute('type', 'button');
+
+      modalCancel.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+
+        for (let node of nodes) {
+          node.removeAttribute('tabindex');
+        }
+
+        document.body.style.overflow = '';
+        modalWrapper.remove();
+        document.removeEventListener('keydown', closePromptByEsc);
+        callback(null);
+      });
+
+      modalForm.append(modalInput, modalSubmit, modalCancel);
+      modalContainer.append(htmlField, modalForm);
+      modalWrapper.append(modalContainer);
+      document.body.append(modalWrapper);
+
+      modalInput.focus();
+
+      document.addEventListener('keydown', closePromptByEsc);
+
+      function closePromptByEsc(e){
+        e.stopPropagation();
+
+        if (e.key === 'Escape') {
+          for (let node of nodes) {
+            node.removeAttribute('tabindex');
+          }
+
+          document.body.style.overflow = '';
+          modalWrapper.remove();
+          document.removeEventListener('keydown', closePromptByEsc);
+          callback(null);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
