@@ -7,8 +7,8 @@
 
   <style>
     #field {
-      width: 200px;
-      height: 150px;
+      width: 400px;
+      height: 350px;
       border: 10px solid black;
       background-color: #00FF00;
       overflow: hidden;
@@ -46,43 +46,47 @@
     let fieldCoords = field.getBoundingClientRect();
 
     let ball = document.querySelector('#ball');
-    let ballCoords = ball.getBoundingClientRect();
 
-    let fieldStyles = window.getComputedStyle(field);
-    let fieldBorderTopWidth = +fieldStyles.borderTopWidth.match(/\d/g).join('');
-    let fieldBorderLeftWidth = +fieldStyles.borderLeftWidth.match(/\d/g).join('');
-    let fieldBorderRightWidth = +fieldStyles.borderRightWidth.match(/\d/g).join('');
-    let fieldBorderBottomWidth = +fieldStyles.borderBottomWidth.match(/\d/g).join('');
+    ball.addEventListener('load', function(){
+      let ballCoords = ball.getBoundingClientRect();
 
-    let fieldInnerWidth = fieldCoords.width - fieldBorderLeftWidth - fieldBorderRightWidth;
-    let fieldInnerHeight = fieldCoords.height - fieldBorderTopWidth - fieldBorderBottomWidth;
+      let fieldStyles = window.getComputedStyle(field);
+      let fieldBorderTopWidth = +fieldStyles.borderTopWidth.match(/\d/g).join('');
+      let fieldBorderLeftWidth = +fieldStyles.borderLeftWidth.match(/\d/g).join('');
+      let fieldBorderRightWidth = +fieldStyles.borderRightWidth.match(/\d/g).join('');
+      let fieldBorderBottomWidth = +fieldStyles.borderBottomWidth.match(/\d/g).join('');
 
-    field.addEventListener('click', (e) =>{
-      let clientX = e.clientX + window.pageXOffset - fieldCoords.left - fieldBorderLeftWidth;
-      let clientY = e.clientY + window.pageYOffset - fieldCoords.top - fieldBorderTopWidth;
+      let fieldInnerWidth = fieldCoords.width - fieldBorderLeftWidth - fieldBorderRightWidth;
+      let fieldInnerHeight = fieldCoords.height - fieldBorderTopWidth - fieldBorderBottomWidth;
 
-      let ballTop = clientY - (ballCoords.height / 2);
-      let ballLeft = clientX - (ballCoords.width / 2);
+      field.addEventListener('click', (e) => {
+        let clientX = e.clientX + window.pageXOffset - fieldCoords.left - fieldBorderLeftWidth;
+        let clientY = e.clientY + window.pageYOffset - fieldCoords.top - fieldBorderTopWidth;
 
-      if(ballTop <= 0){
-        ballTop = 0;
-      }
+        let ballTop = clientY - (ballCoords.height / 2);
+        let ballLeft = clientX - (ballCoords.width / 2);
 
-      if(ballLeft <= 0){
-        ballLeft = 0;
-      }
+        if (ballTop <= 0) {
+          ballTop = 0;
+        }
 
-      if((ballLeft + ballCoords.width) >= fieldInnerWidth){
-        ballLeft = fieldInnerWidth - ballCoords.width;
-      }
+        if (ballLeft <= 0) {
+          ballLeft = 0;
+        }
 
-      if((ballTop + ballCoords.height) > fieldInnerHeight){
-        ballTop = fieldInnerHeight - ballCoords.height;
-      }
+        if ((ballLeft + ballCoords.width) >= fieldInnerWidth) {
+          ballLeft = fieldInnerWidth - ballCoords.width;
+        }
 
-      ball.style.left = `${ballLeft}px`;
-      ball.style.top = `${ballTop}px`;
+        if ((ballTop + ballCoords.height) > fieldInnerHeight) {
+          ballTop = fieldInnerHeight - ballCoords.height;
+        }
+
+        ball.style.left = `${ballLeft}px`;
+        ball.style.top = `${ballTop}px`;
+      });
     });
+    
   </script>
 </body>
 
