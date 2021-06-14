@@ -1,0 +1,53 @@
+.millionaire__question
+{
+  &-text
+  {
+    background: #001233;
+    color: #FFF;
+    border: 5px solid #4EBECD;
+    padding: 35px;
+    text-align: center;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+
+  &-answers
+  {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style-position: inside;
+    color: #FFF;
+    counter-reset: myCounter;
+    list-style: none;
+    padding: 0;
+
+    li
+    {
+      width: 49%;
+      margin: 10px 0;
+    }
+
+    button
+    {
+      width: 100%;
+      font-weight: bold;
+      font-size: 1.125rem;
+
+      &::before
+      {
+        counter-increment: myCounter;
+        content: counter(myCounter, upper-latin)'.';
+        margin-right: 7px;
+        color: #FFC600;
+        transition: 0.4s;
+      }
+
+      &.warning::before
+      {
+        color: #FFF;
+      }
+    }
+  }
+}

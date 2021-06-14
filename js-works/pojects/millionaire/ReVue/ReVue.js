@@ -1,9 +1,10 @@
 const ReVue = {
+  components: [],
+  elementsCounter: 0,
+
   sayHello(){
     console.log('ReVue!');
   },
-
-  components: [],
 
   getComponentByName(name){
     let findedComponent = this.components.find((component) => {
@@ -13,30 +14,23 @@ const ReVue = {
     return findedComponent;
   },
 
-  createElement(type, props, eventListeners, ...childrens){
-    let element = document.createElement(type);
+  build(components){
+    console.time('ReVue build()');
 
-    handleElementProps(element, props);
-    handleElementEventListeners(element, eventListeners);
-    handleElementChildrens(element, childrens);
-
-    return element;
-  },
-
-  build(rootComponent){
     let app = document.querySelector('#revue-app');
 
-    // app.append(mergeComponents(rootComponent));
-
-    if(app && rootComponent){
-      app.append(rootComponent);
+    if(app && components && components.length > 0){
+      for(let component of components){
+        app.append(mergeComponents(component));
+      }
     }
+
+    console.timeEnd('ReVue build()');
   }
 }
 
 function mergeComponents(parent){
-  if(!parent.childrens[0].childrens){
-    parent.element.append(parent.childrens[0]);
+  if(parent.childrens.length === 0){
     return parent.element;
   }
 
@@ -45,44 +39,6 @@ function mergeComponents(parent){
   });
 
   return parent.element;
-}
-
-function handleElementProps(element, props){
-  for(let p in props){
-    switch(p){
-      case 'classNames':
-        let classNames = props[p].split(' ');
-        
-        classNames.forEach((name) => {
-          element.classList.add(name);
-        });
-
-        break;
-
-      default:
-        element.setAttribute(p, props[p]);
-    }
-  }
-}
-
-function handleElementEventListeners(element, eventListeners){
-  if(eventListeners){
-    for(let event in eventListeners){
-      element.addEventListener(event, eventListeners[event], false);
-    }
-  }
-}
-
-function handleElementChildrens(element, childrens){
-  if(childrens){
-    childrens.forEach((children) => {
-      if(typeof children === 'string'){
-        element.innerHTML = children;
-      } else {
-        element.append(children);
-      }
-    });
-  }
 }
 
 export default ReVue;

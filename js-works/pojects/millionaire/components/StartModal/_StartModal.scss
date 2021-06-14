@@ -1,0 +1,72 @@
+.millionaire__start-modal
+{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #001233;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .text
+  {
+    color: #FFF;
+    margin-bottom: 25px;
+
+    h2
+    {
+      margin: 15px 0;
+      color: #FFC600;
+      text-transform: uppercase;
+      font-size: 2rem;
+    }
+
+    p
+    {
+      margin: 0;
+    }
+  }
+
+  &-form
+  {
+    border: 5px solid #4EBECD;
+    border-radius: 3px;
+    padding: 35px;
+    text-align: center;
+    max-width: 750px;
+    width: 100%;
+
+    &-input
+    {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      min-height: 55px;
+      border: 3px solid #4EBECD;
+      background: none;
+      border-radius: 3px;
+      padding: 10px;
+      color: #FFF;
+      font-size: 1rem;
+      transition: 0.4s;
+      font-family: inherit;
+      text-align: center;
+
+      &:hover,
+      &:focus
+      {
+        border: 3px solid #FFC600;
+        outline: none;
+      }
+
+      &::placeholder
+      {
+        font-family: inherit;
+        color: rgba(255,255,255,0.5);
+      }
+    }
+  }
+}

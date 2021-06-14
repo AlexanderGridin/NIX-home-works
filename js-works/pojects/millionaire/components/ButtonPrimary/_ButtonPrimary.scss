@@ -1,0 +1,28 @@
+.button-primary
+{
+  background: #001233;
+  border: 5px solid #4EBECD;
+
+  &:hover
+  {
+    background: #4EBECD;
+  }
+
+  &.warning
+  {
+    background: #FFC600;
+    border: 5px solid #FFC600;
+  }
+
+  &.success
+  {
+    background: #5FC700;
+    border: 5px solid #5FC700;
+  }
+
+  &.error
+  {
+    background: #DD5246;
+    border: 5px solid #DD5246;
+  }
+}

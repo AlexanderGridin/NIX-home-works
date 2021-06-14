@@ -1,1 +1,18 @@
-@import '../../components/Buttons/Buttons';
+@import './common/defaults';
+@import './common/tools';
+@import './common/revue-app';
+
+@import '../../components/Button/Button';
+@import '../../components/ButtonPrimary/ButtonPrimary';
+@import '../../components/ButtonSecondary/ButtonSecondary';
+@import '../../components/Question/Question';
+@import '../../components/QuestionsPrices/QuestionsPrices';
+@import '../../components/QuestionsList/QuestionsList';
+@import '../../components/Helpres/Helpers';
+@import '../../components/RightField/RightField';
+@import '../../components/StartModal/StartModal';
+@import '../../components/WinningModal/WinningModal';
+@import '../../components/PlayerProfile/PlayerProfile';
+@import '../../components/FriendModal/FriendModal';
+
+@import '../../components/Millionaire/Millionaire';
